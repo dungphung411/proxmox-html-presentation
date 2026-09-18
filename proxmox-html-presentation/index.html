@@ -43,14 +43,18 @@
 </div>
 </div>
 </section>
-<section class="slide dark" data-duration="6">
+<section class="slide dark architecture-slide" data-duration="9">
 <div class="eyebrow">MODERN DATACENTER</div><h2>From servers to a resilient cluster.</h2>
-<div class="cluster stage">
-<div class="node n1"><span>NODE 01</span><b>VMs · CTs</b><i></i></div>
-<div class="node n2"><span>NODE 02</span><b>VMs · CTs</b><i></i></div>
-<div class="node n3"><span>NODE 03</span><b>VMs · CTs</b><i></i></div>
-<svg class="links" viewbox="0 0 1000 400"><path d="M180,200 C330,60 650,60 820,200"></path><path d="M180,200 C330,340 650,340 820,200"></path><path d="M180,200 L820,200"></path></svg>
-<div class="cluster-label">Cluster fabric • quorum • shared services</div>
+<div class="architecture-stage">
+<div class="arch-layer management-layer"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="8" width="36" height="25" rx="3"/><path d="M17 40h14M24 33v7M13 16h22M13 22h11"/></svg><div><small>MANAGEMENT PLANE</small><b>Web interface, REST API and CLI</b></div><span>One view for every node</span></div>
+<div class="arch-layer services-layer"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="12" cy="24" r="5"/><circle cx="36" cy="12" r="5"/><circle cx="36" cy="36" r="5"/><path d="M16.5 22 31 14.5M16.5 26 31 33.5"/></svg><div><small>CLUSTER SERVICES</small><b>Quorum, HA, storage and SDN</b></div><span>pve-cluster · pve-ha · pvescheduler</span></div>
+<div class="arch-workloads">
+<div class="arch-workload"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="8" width="34" height="27" rx="4"/><path d="M17 41h14M24 35v6"/></svg><div><small>QEMU / KVM</small><b>Virtual machines</b><span>Linux · Windows · Apps</span></div></div>
+<div class="arch-workload"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m24 5 16 8v22l-16 8-16-8V13zM8 13l16 9 16-9M24 22v21"/></svg><div><small>LXC</small><b>Linux containers</b><span>Fast deployment · High density</span></div></div>
+</div>
+<div class="arch-kernel"><span>KVM</span><b>LINUX KERNEL</b><span>AppArmor · cgroups</span></div>
+<div class="arch-nodes"><div class="arch-node"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="6" width="32" height="36" rx="4"/><path d="M14 14h20M14 23h20M14 32h12"/><circle cx="34" cy="32" r="2"/></svg><b>NODE 01</b><span>VMs · CTs</span></div><div class="arch-node"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="6" width="32" height="36" rx="4"/><path d="M14 14h20M14 23h20M14 32h12"/><circle cx="34" cy="32" r="2"/></svg><b>NODE 02</b><span>VMs · CTs</span></div><div class="arch-node"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="6" width="32" height="36" rx="4"/><path d="M14 14h20M14 23h20M14 32h12"/><circle cx="34" cy="32" r="2"/></svg><b>NODE 03</b><span>VMs · CTs</span></div></div>
+<div class="cluster-label">Cluster fabric · quorum · shared services</div>
 </div>
 </section>
 <section class="slide light" data-duration="7">
@@ -73,14 +77,18 @@
 <div class="eyebrow">OPEN ENTERPRISE PLATFORM</div><h2>Built on open technologies.</h2>
 <div class="cards"><div class="card"><strong>KVM</strong><span>Full virtualization</span></div><div class="card"><strong>LXC</strong><span>Linux containers</span></div><div class="card"><strong>ZFS / Ceph</strong><span>Software-defined storage</span></div><div class="card"><strong>Linux</strong><span>Open foundation</span></div></div>
 </section>
-<section class="slide dark" data-duration="8">
-<div class="split">
-<div><div class="eyebrow">KVM VIRTUAL MACHINES</div><h2>Run Linux and Windows workloads.</h2><p class="lede">Enterprise virtualization with integrated lifecycle management.</p></div>
-<div class="vm-stack"><div class="vm v1">VM 101 <span>Linux</span></div><div class="vm v2">VM 202 <span>Windows</span></div><div class="vm v3">VM 303 <span>App</span></div><div class="host">KVM HOST</div></div>
+<section class="slide dark workload-slide" data-duration="10">
+<div class="eyebrow">VIRTUALIZATION OPTIONS</div><h2>Virtual machines and Linux containers.</h2>
+<div class="workload-compare">
+<div class="workload-side vm-side"><div class="workload-head"><span class="workload-symbol">VM</span><div><small>QEMU / KVM</small><b>Full virtual machines</b></div></div><p>Run isolated Linux and Windows workloads with dedicated virtual hardware.</p><div class="guest-icons">
+<div><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 8l17-2v17H5zM26 5l17-2v20H26zM5 27h17v17L5 42zM26 27h17v19l-17-2z"/></svg><span>Windows</span></div>
+<div><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="8" width="34" height="32" rx="5"/><path d="m14 19 6 5-6 5M24 31h10"/></svg><span>Linux</span></div>
+<div><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="7" width="14" height="14" rx="3"/><rect x="27" y="7" width="14" height="14" rx="3"/><rect x="7" y="27" width="14" height="14" rx="3"/><rect x="27" y="27" width="14" height="14" rx="3"/></svg><span>Apps</span></div>
+<div><svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="11" rx="14" ry="5"/><path d="M10 11v25c0 3 6 5 14 5s14-2 14-5V11M10 23c0 3 6 5 14 5s14-2 14-5"/></svg><span>Database</span></div>
+</div><div class="runtime-label">KVM virtual hardware</div></div>
+<div class="workload-side lxc-side"><div class="workload-head"><span class="lxc-mark">LXC</span><div><small>LINUX CONTAINERS</small><b>Lightweight workloads</b></div></div><p>Share the host kernel for fast deployment and high guest density.</p><div class="container-stack"><div class="container-apps"><span>APP</span><span>APP</span><span>APP</span></div><div class="container-rootfs">Container filesystem</div><div class="container-guard"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m24 5 15 6v11c0 10-6 17-15 21-9-4-15-11-15-21V11z"/><path d="m17 24 5 5 10-11"/></svg><b>AppArmor</b><span>cgroups · namespaces</span></div></div></div>
 </div>
-</section>
-<section class="slide light" data-duration="8">
-<div class="split"><div><div class="eyebrow">LXC CONTAINERS</div><h2>Lightweight by design.</h2><p class="lede">Efficient Linux containers for fast deployment and high density.</p></div><div class="containers"><div>CT 201</div><div>CT 202</div><div>CT 203</div><div>CT 204</div><div>CT 205</div><div>CT 206</div></div></div>
+<div class="shared-kernel"><span>KVM</span><b>LINUX KERNEL</b><span>LXC · AppArmor · cgroups</span></div>
 </section>
 <section class="slide dark" data-duration="8">
 <div class="eyebrow">CLUSTER MANAGEMENT</div><h2>Manage every node from one place.</h2>
@@ -116,9 +124,20 @@
 </div>
 <div class="credit">Storage types summarized from the supplied Proxmox VE training material.</div>
 </section>
-<section class="slide light" data-duration="8">
-<div class="eyebrow">CEPH STORAGE</div><h2>Distributed storage across nodes.</h2>
-<div class="ceph"><div class="ceph-node"><b>NODE 01</b><span class="disk">OSD</span><span class="disk">OSD</span></div><div class="ceph-node"><b>NODE 02</b><span class="disk">OSD</span><span class="disk">OSD</span></div><div class="ceph-node"><b>NODE 03</b><span class="disk">OSD</span><span class="disk">OSD</span></div><div class="data d1"></div><div class="data d2"></div><div class="data d3"></div></div>
+<section class="slide light ceph-failover-slide" data-duration="11">
+<div class="eyebrow">CEPH STORAGE</div><h2>Replicas keep I/O available during a node failure.</h2>
+<div class="ceph-failover">
+<div class="ceph-client"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="8" width="34" height="25" rx="4"/><path d="M17 40h14M24 33v7"/></svg><div><small>VM AND CONTAINER I/O</small><b>Requests continue</b></div><span class="io-pulse"></span></div>
+<svg class="ceph-fabric" viewBox="0 0 1000 430" aria-hidden="true"><path class="fabric-main" d="M500 70V145M165 145H835M165 145V205M500 145V205M835 145V205"/><path class="fabric-failed" d="M165 145V205"/></svg>
+<div class="ceph-fail-nodes">
+<div class="ceph-fail-node failing"><div class="ceph-node-head"><span>NODE 01</span><b class="node-state"><i></i><em>ONLINE</em></b></div><div class="osd-row"><div class="osd-unit"><small>OSD 1</small><div class="osd-body"><span></span><i class="shard shard-a"></i><i class="shard shard-b"></i></div></div><div class="osd-unit"><small>OSD 2</small><div class="osd-body"><span></span><i class="shard shard-c"></i><i class="shard shard-d"></i></div></div></div><div class="node-load"><span>LOAD</span><i></i><b>44%</b></div><div class="failure-mark"><span>×</span><b>NODE OFFLINE</b></div></div>
+<div class="ceph-fail-node survivor node-two"><div class="ceph-node-head"><span>NODE 02</span><b class="node-state"><i></i><em>ONLINE</em></b></div><div class="osd-row"><div class="osd-unit"><small>OSD 3</small><div class="osd-body"><span></span><i class="shard shard-e"></i><i class="shard shard-f"></i></div></div><div class="osd-unit"><small>OSD 4</small><div class="osd-body"><span></span><i class="shard shard-a replica"></i><i class="shard shard-c replica"></i></div></div></div><div class="node-load"><span>LOAD</span><i></i><b>44%</b></div></div>
+<div class="ceph-fail-node survivor node-three"><div class="ceph-node-head"><span>NODE 03</span><b class="node-state"><i></i><em>ONLINE</em></b></div><div class="osd-row"><div class="osd-unit"><small>OSD 5</small><div class="osd-body"><span></span><i class="shard shard-b replica"></i><i class="shard shard-d replica"></i></div></div><div class="osd-unit"><small>OSD 6</small><div class="osd-body"><span></span><i class="shard shard-e replica"></i><i class="shard shard-f replica"></i></div></div></div><div class="node-load"><span>LOAD</span><i></i><b>44%</b></div></div>
+</div>
+<i class="rebalance-particle rp1"></i><i class="rebalance-particle rp2"></i><i class="rebalance-particle rp3"></i><i class="rebalance-particle rp4"></i>
+<div class="ceph-availability"><span class="availability-light"></span><div><small>CLUSTER STATUS</small><b><span class="healthy-status">Healthy</span><span class="degraded-status">Available, degraded</span></b></div><p>Replicas on the surviving nodes continue serving data.</p></div>
+</div>
+<div class="credit">Illustrative three-node cluster. Availability depends on quorum, replica size and failure-domain configuration.</div>
 </section>
 
 <section class="slide light" data-duration="8">
