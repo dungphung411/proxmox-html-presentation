@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Proxmox Virtual Environment — Animated Presentation</title>
+<link href="https://raw.githubusercontent.com" rel="preconnect"/>
+<link href="styles.css" rel="stylesheet">
+</link></head>
+<body>
+<div aria-live="polite" class="deck" id="deck">
+<div class="hud">
+<div class="brandline">
+<img alt="Proxmox" class="brand-logo" src="https://raw.githubusercontent.com/proxmox/pve-docs/master/images/proxmox-logo.svg"/>
+</div>
+<div class="hud-right"><span id="counter">01 / 20</span><span id="clock">00:00 / 02:30</span></div>
+</div>
+<section class="slide active dark cover" data-duration="7">
+<div class="cover-art"></div><div class="cover-shade"></div>
+<div class="hero cover-copy">
+<div class="eyebrow reveal">CSC PRESENTS</div>
+<h1 class="title xl reveal delay1">Proxmox®<br/>Virtual Environment</h1>
+<p class="subtitle reveal delay2">An open platform for virtual machines, containers and resilient infrastructure.</p>
+<div class="accent-line reveal delay3"></div>
+</div>
+</section>
+<section class="slide light history" data-duration="9">
+<div class="history-copy"><div class="eyebrow">PROXMOX AT 20</div><h2>A platform shaped by two decades of open infrastructure.</h2><p class="lede">Founded in 2005 by Martin Maurer and Dietmar Maurer, Proxmox released Proxmox VE in 2008 and has continued expanding its open-source product portfolio.</p><div class="milestones"><span><b>2005</b>Company founded</span><span><b>2008</b>Proxmox VE</span><span><b>2020</b>Proxmox Backup Server</span><span><b>2025</b>20 years</span></div></div>
+<figure class="timeline-figure"><img alt="Proxmox product and company timeline from 2005 to 2025" src="../reference-assets/training-pptx/ppt/media/image4.png"/><figcaption>Source: supplied Proxmox training slides.</figcaption></figure>
+</section>
+<section class="slide dark company" data-duration="8">
+<div class="company-photo"></div><div class="company-shade"></div>
+<div class="company-copy"><div class="eyebrow">THE COMPANY</div><h2>Proxmox Server Solutions GmbH</h2><p class="lede">The Vienna-based company develops open-source server software and provides enterprise subscriptions, technical support and training for its products.</p><div class="company-facts"><span>Founded in 2005</span><span>Headquarters in Vienna, Austria</span><span>Developer of Proxmox VE</span></div></div>
+<div class="credit">Image source: supplied Proxmox training slides.</div>
+</section>
+<section class="slide light" data-duration="6">
+<div class="split">
+<div><div class="eyebrow">ONE PLATFORM</div><h2>Modern infrastructure,<br/>managed as one.</h2><p class="lede">KVM virtual machines, LXC containers, software-defined storage and networking — under one web interface.</p></div>
+<div class="feature-wheel">
+<div class="core pulse">Proxmox VE</div>
+<div class="chip c1">KVM</div><div class="chip c2">LXC</div><div class="chip c3">Ceph</div><div class="chip c4">SDN</div>
+</div>
+</div>
+</section>
+<section class="slide dark" data-duration="6">
+<div class="eyebrow">MODERN DATACENTER</div><h2>From servers to a resilient cluster.</h2>
+<div class="cluster stage">
+<div class="node n1"><span>NODE 01</span><b>VMs · CTs</b><i></i></div>
+<div class="node n2"><span>NODE 02</span><b>VMs · CTs</b><i></i></div>
+<div class="node n3"><span>NODE 03</span><b>VMs · CTs</b><i></i></div>
+<svg class="links" viewbox="0 0 1000 400"><path d="M180,200 C330,60 650,60 820,200"></path><path d="M180,200 C330,340 650,340 820,200"></path><path d="M180,200 L820,200"></path></svg>
+<div class="cluster-label">Cluster fabric • quorum • shared services</div>
+</div>
+</section>
+<section class="slide light" data-duration="7">
+<div class="split">
+<div><div class="eyebrow">THE CHALLENGE</div><h2>Too many silos.<br/>Too much complexity.</h2><p class="lede">Separate hypervisors, storage layers, network tools and backup workflows increase operational overhead.</p></div>
+<div class="silos"><div>Compute</div><div>Storage</div><div>Network</div><div>Backup</div></div>
+</div>
+</section>
+<section class="slide dark" data-duration="7">
+<div class="eyebrow">SIMPLIFY IT</div><h2>Unify infrastructure operations.</h2>
+<div class="merge-flow detailed-flow">
+<div class="mitem"><svg aria-hidden="true" viewBox="0 0 48 48"><rect x="8" y="8" width="32" height="32" rx="5"/><path d="M16 18h16M16 24h16M16 30h9"/><circle cx="34" cy="30" r="2"/></svg><b>Compute</b><span>VMs and containers</span></div>
+<div class="mitem"><svg aria-hidden="true" viewBox="0 0 48 48"><ellipse cx="24" cy="12" rx="14" ry="5"/><path d="M10 12v17c0 3 6 5 14 5s14-2 14-5V12M10 21c0 3 6 5 14 5s14-2 14-5"/></svg><b>Storage</b><span>Ceph, ZFS and backup</span></div>
+<div class="mitem"><svg aria-hidden="true" viewBox="0 0 48 48"><circle cx="12" cy="24" r="5"/><circle cx="36" cy="12" r="5"/><circle cx="36" cy="36" r="5"/><path d="M16.5 22 31 14.5M16.5 26 31 33.5"/></svg><b>Network</b><span>VLAN, VNet and SDN</span></div>
+<div class="mitem"><svg aria-hidden="true" viewBox="0 0 48 48"><rect x="8" y="9" width="32" height="30" rx="4"/><path d="M15 17h18M15 24h8M15 31h12"/><circle cx="34" cy="31" r="2"/></svg><b>Management</b><span>Web UI, API and roles</span></div>
+<div class="flow-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="target"><span class="target-mark">×</span>Proxmox VE<small>One integrated platform</small></div>
+</div>
+</section>
+<section class="slide light" data-duration="7">
+<div class="eyebrow">OPEN ENTERPRISE PLATFORM</div><h2>Built on open technologies.</h2>
+<div class="cards"><div class="card"><strong>KVM</strong><span>Full virtualization</span></div><div class="card"><strong>LXC</strong><span>Linux containers</span></div><div class="card"><strong>ZFS / Ceph</strong><span>Software-defined storage</span></div><div class="card"><strong>Linux</strong><span>Open foundation</span></div></div>
+</section>
+<section class="slide dark" data-duration="8">
+<div class="split">
+<div><div class="eyebrow">KVM VIRTUAL MACHINES</div><h2>Run Linux and Windows workloads.</h2><p class="lede">Enterprise virtualization with integrated lifecycle management.</p></div>
+<div class="vm-stack"><div class="vm v1">VM 101 <span>Linux</span></div><div class="vm v2">VM 202 <span>Windows</span></div><div class="vm v3">VM 303 <span>App</span></div><div class="host">KVM HOST</div></div>
+</div>
+</section>
+<section class="slide light" data-duration="8">
+<div class="split"><div><div class="eyebrow">LXC CONTAINERS</div><h2>Lightweight by design.</h2><p class="lede">Efficient Linux containers for fast deployment and high density.</p></div><div class="containers"><div>CT 201</div><div>CT 202</div><div>CT 203</div><div>CT 204</div><div>CT 205</div><div>CT 206</div></div></div>
+</section>
+<section class="slide dark" data-duration="8">
+<div class="eyebrow">CLUSTER MANAGEMENT</div><h2>Manage every node from one place.</h2>
+<div class="browser-frame">
+<div class="browser-top"><span></span><span></span><span></span><b>Datacenter</b></div>
+<div class="browser-body"><div class="tree"><b>Datacenter</b><span>▾ node-01</span><span>▾ node-02</span><span>▾ node-03</span><span>☁ Storage</span></div><div class="dashboard"><div class="metric"><small>Nodes</small><strong>3</strong></div><div class="metric"><small>Guests</small><strong>42</strong></div><div class="metric"><small>CPU</small><strong>37%</strong></div><div class="metric"><small>Memory</small><strong>61%</strong></div><div class="chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+</div>
+<div class="credit">Visual inspired by the official Proxmox VE web interface.</div>
+</section>
+<section class="slide light" data-duration="8">
+<div class="eyebrow">HIGH AVAILABILITY</div><h2>Workloads recover automatically.</h2>
+<div class="ha-demo"><div class="ha-node fail"><b>NODE 01</b><span>offline</span></div><div class="moving-vm">VM 120</div><div class="ha-node ok"><b>NODE 02</b><span>online</span></div><div class="ha-node ok"><b>NODE 03</b><span>online</span></div></div>
+</section>
+<section class="slide dark" data-duration="8">
+<div class="eyebrow">LIVE MIGRATION</div><h2>Move workloads across the cluster.</h2>
+<div class="migration"><div class="rack">NODE 01<div class="guest migrate">VM 310</div></div><div class="mroute"><span>live migration</span></div><div class="rack">NODE 02<div class="slot">destination</div></div></div>
+</section>
+<section class="slide dark storage-ecosystem" data-duration="10">
+<div class="storage-heading"><div class="eyebrow">STORAGE PLUGINS</div><h2>Broad storage support,<br/>managed in one platform.</h2><p class="lede">Local disks, shared appliances and distributed storage connect through the same Proxmox VE interface.</p><div class="storage-legend"><span><i class="local-dot"></i>Local</span><span><i class="shared-dot"></i>Shared</span><span><i class="distributed-dot"></i>Distributed and backup</span></div></div>
+<div class="storage-orbit">
+<svg class="storage-links" viewBox="0 0 760 600" aria-hidden="true"><defs><marker id="storageArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z"></path></marker></defs><path d="M118 82 L325 252"/><path d="M330 50 L360 236"/><path d="M566 82 L425 252"/><path d="M650 220 L445 282"/><path d="M650 395 L445 320"/><path d="M560 520 L420 345"/><path d="M330 550 L365 360"/><path d="M112 520 L325 345"/><path d="M55 390 L310 320"/><path d="M55 220 L310 280"/></svg>
+<div class="storage-core"><img alt="Proxmox" src="https://raw.githubusercontent.com/proxmox/pve-docs/master/images/proxmox-logo.svg"/><b>Proxmox VE</b><span>Unified storage layer</span></div>
+<div class="storage-type local st1"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 14h13l4 5h13v19H9z"/><path d="M9 19h30"/></svg><b>Directory</b><span>File</span></div>
+<div class="storage-type local st2"><svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="12" rx="14" ry="5"/><path d="M10 12v24c0 3 6 5 14 5s14-2 14-5V12M10 24c0 3 6 5 14 5s14-2 14-5"/></svg><b>ZFS</b><span>File and block</span></div>
+<div class="storage-type local st3"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 12h32v25H8zM14 18h20M14 25h20M14 32h12"/></svg><b>BTRFS</b><span>File</span></div>
+<div class="storage-type local st4"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="9" width="15" height="30" rx="3"/><rect x="26" y="9" width="15" height="30" rx="3"/><path d="M11 15h7M30 15h7"/></svg><b>LVM / LVM-thin</b><span>Block</span></div>
+<div class="storage-type shared st5"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="10" cy="24" r="5"/><circle cx="38" cy="12" r="5"/><circle cx="38" cy="36" r="5"/><path d="M15 22l18-8M15 26l18 8"/></svg><b>NFS</b><span>Shared file</span></div>
+<div class="storage-type shared st6"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="11" width="34" height="26" rx="4"/><path d="M13 18h22M13 25h15M13 32h10"/></svg><b>CIFS / SMB</b><span>Shared file</span></div>
+<div class="storage-type shared st7"><svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="16" cy="24" rx="9" ry="13"/><path d="M25 24h15M34 18l6 6-6 6"/></svg><b>iSCSI</b><span>Shared block</span></div>
+<div class="storage-type shared st8"><svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="15" cy="13" rx="8" ry="4"/><path d="M7 13v22c0 2 4 4 8 4s8-2 8-4V13M28 15h12v18H28zM23 24h5"/></svg><b>ZFS over iSCSI</b><span>Shared block</span></div>
+<div class="storage-type distributed st9"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="5"/><circle cx="11" cy="13" r="5"/><circle cx="37" cy="13" r="5"/><circle cx="11" cy="35" r="5"/><circle cx="37" cy="35" r="5"/><path d="M15 16l6 5M33 16l-6 5M15 32l6-5M33 32l-6-5"/></svg><b>Ceph RBD / CephFS</b><span>Distributed</span></div>
+<div class="storage-type distributed st10"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 14h28v24H10zM16 10h16v8H16z"/><path d="M17 27l5 5 10-11"/></svg><b>Proxmox Backup</b><span>Backup target</span></div>
+</div>
+<div class="credit">Storage types summarized from the supplied Proxmox VE training material.</div>
+</section>
+<section class="slide light" data-duration="8">
+<div class="eyebrow">CEPH STORAGE</div><h2>Distributed storage across nodes.</h2>
+<div class="ceph"><div class="ceph-node"><b>NODE 01</b><span class="disk">OSD</span><span class="disk">OSD</span></div><div class="ceph-node"><b>NODE 02</b><span class="disk">OSD</span><span class="disk">OSD</span></div><div class="ceph-node"><b>NODE 03</b><span class="disk">OSD</span><span class="disk">OSD</span></div><div class="data d1"></div><div class="data d2"></div><div class="data d3"></div></div>
+</section>
+
+<section class="slide light" data-duration="8">
+<div class="eyebrow">SOFTWARE-DEFINED NETWORK</div><h2>Build flexible virtual networks.</h2>
+<div class="netmap"><div class="net-node a">NODE 01</div><div class="net-node b">NODE 02</div><div class="net-node c">NODE 03</div><div class="vnet">VNet / VXLAN / VLAN</div><svg viewbox="0 0 1000 420"><path d="M150 90 L500 210 L850 90"></path><path d="M150 90 L850 90"></path><path d="M500 210 L500 340"></path></svg><div class="wan">UPLINK</div></div>
+</section>
+<section class="slide dark" data-duration="8">
+<div class="split"><div><div class="eyebrow">OFFICIAL UI REFERENCE</div><h2>Software-defined networking in the GUI.</h2><p class="lede">This slide loads an official screenshot from the public Proxmox VE documentation repository.</p></div><div class="official-shot"><img alt="Official Proxmox VE WireGuard fabric screenshot" src="https://raw.githubusercontent.com/proxmox/pve-docs/master/images/screenshot/gui-datacenter-create-fabric-wireguard.png"/><div class="shot-fallback">Official Proxmox screenshot<br/><small>Requires internet access</small></div></div></div>
+<div class="credit">Screenshot source: Proxmox VE documentation (Proxmox Server Solutions GmbH).</div>
+</section>
+<section class="slide light" data-duration="8">
+<div class="eyebrow">BACKUP &amp; RECOVERY</div><h2>Protect workloads with repeatable workflows.</h2>
+<div class="backup-flow"><div class="bicon">VMs</div><div class="pulse-arrow">→</div><div class="bicon accent">Backup</div><div class="pulse-arrow">→</div><div class="bicon">Restore</div></div>
+</section>
+<section class="slide dark" data-duration="8">
+<div class="eyebrow">WEB MANAGEMENT</div><h2>One interface. Entire cluster.</h2>
+<div class="ui-mock"><div class="ui-nav"><strong>Datacenter</strong><span>node-01</span><span>node-02</span><span>node-03</span><span>Storage</span><span>Network</span></div><div class="ui-main"><div class="ui-head">Cluster Summary</div><div class="gauges"><div><b>36%</b><small>CPU</small></div><div><b>58%</b><small>Memory</small></div><div><b>72%</b><small>Storage</small></div></div><div class="spark"></div></div></div>
+</section>
+<section class="slide light" data-duration="8">
+<div class="eyebrow">SECURITY &amp; CONTROL</div><h2>Granular access to infrastructure.</h2>
+<div class="security"><div class="shield">✓</div><div class="sec-list"><div>Role-based permissions</div><div>Two-factor authentication</div><div>Firewall integration</div><div>Multiple authentication sources</div></div></div>
+</section>
+<section class="slide dark" data-duration="8">
+<div class="eyebrow">SCALE WITH YOUR BUSINESS</div><h2>Start small. Grow the cluster.</h2>
+<div class="scale"><div class="snode">01</div><div class="snode">02</div><div class="snode">03</div><div class="snode add">04</div><div class="snode add">05</div><div class="snode add">06</div><div class="snode add">07</div><div class="snode add">08</div></div>
+</section>
+<section class="slide light" data-duration="7">
+<div class="eyebrow">BUSINESS VALUE</div><h2>Less complexity. More control.</h2>
+<div class="value-row"><div><strong>01</strong><b>Integrated</b><span>Compute, storage and networking.</span></div><div><strong>02</strong><b>Flexible</b><span>Open technologies and broad hardware choice.</span></div><div><strong>03</strong><b>Resilient</b><span>Clustering, HA and backup workflows.</span></div></div>
+</section>
+<section class="slide dark" data-duration="8">
+<div class="grid-bg"></div><div class="hero center"><div class="eyebrow">READY FOR MODERN INFRASTRUCTURE</div><h1 class="title reveal">Build your platform<br/>with Proxmox Virtual Environment.</h1><p class="subtitle reveal delay1">Open-source virtualization for enterprise infrastructure.</p><div class="accent-line reveal delay2"></div><p class="credit end-credit">Official screenshots credited to Proxmox Server Solutions GmbH. This presentation is an independent adaptation.</p></div>
+</section>
+<div class="progress"><i id="progressBar"></i></div>
+<div class="controls"><button aria-label="Previous" id="prev">←</button><button aria-label="Play/Pause" id="play">Ⅱ</button><button aria-label="Next" id="next">→</button><button aria-label="Fullscreen" id="fs">⛶</button></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
