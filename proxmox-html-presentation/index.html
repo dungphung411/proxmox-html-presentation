@@ -34,12 +34,17 @@
 <div class="company-copy"><div class="eyebrow">THE COMPANY</div><h2>Proxmox Server Solutions GmbH</h2><p class="lede">The Vienna-based company develops open-source server software and provides enterprise subscriptions, technical support and training for its products.</p><div class="company-facts"><span>Founded in 2005</span><span>Headquarters in Vienna, Austria</span><span>Developer of Proxmox VE</span></div></div>
 <div class="credit">Image source: supplied Proxmox training slides.</div>
 </section>
-<section class="slide light" data-duration="6">
+<section class="slide light platform-slide" data-duration="8">
 <div class="split">
-<div><div class="eyebrow">ONE PLATFORM</div><h2>Modern infrastructure,<br/>managed as one.</h2><p class="lede">KVM virtual machines, LXC containers, software-defined storage and networking — under one web interface.</p></div>
+<div class="platform-copy"><div class="eyebrow">ONE PLATFORM</div><h2>Modern infrastructure,<br/>managed as one.</h2><p class="lede">KVM virtual machines, LXC containers, software-defined storage and networking — under one web interface.</p><p class="open-source-note">Built on Linux and proven open technologies, with open APIs and freedom to choose the infrastructure underneath.</p><div class="open-foundation"><div><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="8" width="36" height="30" rx="4"/><path d="m13 19 6 5-6 5M23 31h12"/></svg><span><b>Open foundation</b>Linux-based platform</span></div><div><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m18 13-11 11 11 11M30 13l11 11-11 11M27 8l-6 32"/></svg><span><b>Open APIs</b>Integrate and automate</span></div><div><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="6" width="32" height="36" rx="4"/><path d="M14 14h20M14 23h20M14 32h12"/><circle cx="34" cy="32" r="2"/></svg><span><b>Hardware choice</b>No proprietary stack</span></div></div></div>
 <div class="feature-wheel">
-<div class="core pulse">Proxmox VE</div>
-<div class="chip c1">KVM</div><div class="chip c2">LXC</div><div class="chip c3">Ceph</div><div class="chip c4">SDN</div>
+<div class="orbit-ring" aria-hidden="true"></div><div class="core pulse"><small>OPEN PLATFORM</small>Proxmox VE</div>
+<div class="chip c1"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="8" width="34" height="27" rx="4"/><path d="M17 41h14M24 35v6"/></svg><span><b>KVM</b>Virtual machines</span></div>
+<div class="chip c2"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m24 5 16 8v22l-16 8-16-8V13zM8 13l16 9 16-9M24 22v21"/></svg><span><b>LXC</b>Containers</span></div>
+<div class="chip c3"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="11" cy="24" r="5"/><circle cx="37" cy="12" r="5"/><circle cx="37" cy="36" r="5"/><path d="M16 22l16-8M16 26l16 8"/></svg><span><b>Ceph</b>Distributed storage</span></div>
+<div class="chip c4"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="10" cy="24" r="5"/><circle cx="38" cy="12" r="5"/><circle cx="38" cy="36" r="5"/><path d="M15 22l18-8M15 26l18 8"/></svg><span><b>SDN</b>Virtual networks</span></div>
+<div class="chip c5"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="8" width="34" height="32" rx="5"/><path d="m14 19 6 5-6 5M24 31h10"/></svg><span><b>Linux</b>Open foundation</span></div>
+<div class="chip c6"><svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="11" rx="14" ry="5"/><path d="M10 11v25c0 3 6 5 14 5s14-2 14-5V11M10 23c0 3 6 5 14 5s14-2 14-5"/></svg><span><b>ZFS</b>Local storage</span></div>
 </div>
 </div>
 </section>
@@ -57,10 +62,15 @@
 <div class="cluster-label">Cluster fabric · quorum · shared services</div>
 </div>
 </section>
-<section class="slide light" data-duration="7">
-<div class="split">
-<div><div class="eyebrow">THE CHALLENGE</div><h2>Too many silos.<br/>Too much complexity.</h2><p class="lede">Separate hypervisors, storage layers, network tools and backup workflows increase operational overhead.</p></div>
-<div class="silos"><div>Compute</div><div>Storage</div><div>Network</div><div>Backup</div></div>
+<section class="slide light challenge-slide" data-duration="9">
+<div class="challenge-copy"><div class="eyebrow">THE CHALLENGE</div><h2>Too many silos<br/>Too much complexity</h2><p class="lede">Separate hypervisors, storage layers, network tools and backup workflows increase operational overhead.</p><div class="silo-impact"><span><b>4</b>management consoles</span><span><b>4×</b>policy surfaces</span><span><b>Slow</b>manual handoffs</span></div></div>
+<div class="silo-map">
+<svg class="silo-connections" viewBox="0 0 760 520" aria-hidden="true"><path d="M95 318 C180 210 225 420 310 315"/><path d="M310 315 C390 208 455 420 530 315"/><path d="M530 315 C605 215 640 390 700 315"/><path d="M95 318 C280 450 510 450 700 315"/></svg>
+<div class="silo-tower compute-silo"><div class="silo-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="6" width="32" height="36" rx="4"/><path d="M14 14h20M14 23h20M14 32h12"/><circle cx="34" cy="32" r="2"/></svg></div><small>SILO 01</small><b>Compute</b><span>Hypervisor</span><span>VM lifecycle</span><em>Console A</em></div>
+<div class="silo-tower storage-silo"><div class="silo-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="11" rx="14" ry="5"/><path d="M10 11v25c0 3 6 5 14 5s14-2 14-5V11M10 23c0 3 6 5 14 5s14-2 14-5"/></svg></div><small>SILO 02</small><b>Storage</b><span>SAN or NAS</span><span>LUNs and snapshots</span><em>Console B</em></div>
+<div class="silo-tower network-silo"><div class="silo-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="10" cy="24" r="5"/><circle cx="38" cy="12" r="5"/><circle cx="38" cy="36" r="5"/><path d="M15 22l18-8M15 26l18 8"/></svg></div><small>SILO 03</small><b>Network</b><span>Switch fabric</span><span>VLAN and firewall</span><em>Console C</em></div>
+<div class="silo-tower backup-silo"><div class="silo-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 14h28v24H10zM16 10h16v8H16z"/><path d="M16 29a8 8 0 1 0 2-6M16 20v9h9"/></svg></div><small>SILO 04</small><b>Backup</b><span>Backup server</span><span>Schedules and restore</span><em>Console D</em></div>
+<div class="handoff-bus"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 16h25M29 10l6 6-6 6M39 32H14M19 26l-6 6 6 6"/></svg><div><small>OPERATIONS BETWEEN SILOS</small><b>Tickets, scripts and manual coordination</b></div><span class="handoff-alert">!</span></div>
 </div>
 </section>
 <section class="slide dark" data-duration="7">
@@ -72,10 +82,6 @@
 <div class="mitem"><svg aria-hidden="true" viewBox="0 0 48 48"><rect x="8" y="9" width="32" height="30" rx="4"/><path d="M15 17h18M15 24h8M15 31h12"/><circle cx="34" cy="31" r="2"/></svg><b>Management</b><span>Web UI, API and roles</span></div>
 <div class="flow-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="target"><span class="target-mark">×</span>Proxmox VE<small>One integrated platform</small></div>
 </div>
-</section>
-<section class="slide light" data-duration="7">
-<div class="eyebrow">OPEN ENTERPRISE PLATFORM</div><h2>Built on open technologies.</h2>
-<div class="cards"><div class="card"><strong>KVM</strong><span>Full virtualization</span></div><div class="card"><strong>LXC</strong><span>Linux containers</span></div><div class="card"><strong>ZFS / Ceph</strong><span>Software-defined storage</span></div><div class="card"><strong>Linux</strong><span>Open foundation</span></div></div>
 </section>
 <section class="slide dark workload-slide" data-duration="10">
 <div class="eyebrow">VIRTUALIZATION OPTIONS</div><h2>Virtual machines and Linux containers.</h2>
@@ -90,17 +96,41 @@
 </div>
 <div class="shared-kernel"><span>KVM</span><b>LINUX KERNEL</b><span>LXC · AppArmor · cgroups</span></div>
 </section>
-<section class="slide dark" data-duration="8">
-<div class="eyebrow">CLUSTER MANAGEMENT</div><h2>Manage every node from one place.</h2>
-<div class="browser-frame">
-<div class="browser-top"><span></span><span></span><span></span><b>Datacenter</b></div>
-<div class="browser-body"><div class="tree"><b>Datacenter</b><span>▾ node-01</span><span>▾ node-02</span><span>▾ node-03</span><span>☁ Storage</span></div><div class="dashboard"><div class="metric"><small>Nodes</small><strong>3</strong></div><div class="metric"><small>Guests</small><strong>42</strong></div><div class="metric"><small>CPU</small><strong>37%</strong></div><div class="metric"><small>Memory</small><strong>61%</strong></div><div class="chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+<section class="slide dark cluster-ui-slide" data-duration="10">
+<div class="eyebrow">CLUSTER MANAGEMENT</div><h2>Manage every node from one place</h2>
+<div class="ui-real-frame">
+<img alt="Proxmox VE 9.2.2 node summary with cluster tree and live resource charts" src="assets/proxmox-ve-dashboard.png"/>
+<div class="ui-source-badge"><i></i>LIVE PROXMOX VE 9.2.2</div>
+<div class="ui-highlight tree-highlight"><span>Cluster tree</span></div>
+<div class="ui-highlight cpu-highlight"><span>CPU and I/O</span></div>
+<div class="ui-highlight memory-highlight"><span>Memory usage</span></div>
+<svg class="ui-cursor" viewBox="0 0 40 52" aria-hidden="true"><path d="M5 3 32 30l-13 1 7 15-8 4-7-16-9 9z"/></svg>
 </div>
-<div class="credit">Visual inspired by the official Proxmox VE web interface.</div>
+<div class="ui-caption"><span>Nodes and guests</span><span>Live resource metrics</span><span>Storage and network configuration</span><b>One web interface</b></div>
+<div class="credit">Screenshot supplied by CSC from a Proxmox VE environment.</div>
 </section>
-<section class="slide light" data-duration="8">
-<div class="eyebrow">HIGH AVAILABILITY</div><h2>Workloads recover automatically.</h2>
-<div class="ha-demo"><div class="ha-node fail"><b>NODE 01</b><span>offline</span></div><div class="moving-vm">VM 120</div><div class="ha-node ok"><b>NODE 02</b><span>online</span></div><div class="ha-node ok"><b>NODE 03</b><span>online</span></div></div>
+<section class="slide light ha-storage-slide" data-duration="11">
+<div class="eyebrow">HIGH AVAILABILITY</div><h2>Workloads restart on an available node</h2>
+<div class="ha-cluster-demo">
+<svg class="ha-cluster-links" viewBox="0 0 1000 310" aria-hidden="true"><path d="M165 165H835"/><path d="M165 165V270M500 165V270M835 165V270"/></svg>
+<div class="ha-server ha-source"><div class="server-face"><i></i><i></i><i></i><span></span></div><b>NODE 01</b><small>FAILED</small><div class="node-failure-x">×</div></div>
+<div class="ha-server ha-target"><div class="server-face"><i></i><i></i><i></i><span></span></div><b>NODE 02</b><small>ONLINE</small><div class="target-slot">restart target</div></div>
+<div class="ha-server ha-standby"><div class="server-face"><i></i><i></i><i></i><span></span></div><b>NODE 03</b><small>ONLINE</small></div>
+<div class="ha-moving-vm"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="8" width="34" height="26" rx="4"/><path d="M17 41h14M24 34v7"/></svg><span>VM 120</span></div>
+<div class="ha-route"><i></i><span>HA restart</span></div>
+</div>
+<div class="ha-storage-modes">
+<div class="storage-mode shared-mode"><div class="mode-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="10" rx="14" ry="5"/><path d="M10 10v27c0 3 6 5 14 5s14-2 14-5V10M10 23c0 3 6 5 14 5s14-2 14-5"/></svg></div><div><small>SHARED STORAGE</small><b>Every node sees the same VM disks</b><p>The HA manager can restart the workload without copying its disk first.</p></div><span class="mode-status">direct access</span></div>
+<div class="storage-mode replicated-mode"><div class="replica-pair"><svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="10" rx="14" ry="5"/><path d="M10 10v27c0 3 6 5 14 5s14-2 14-5V10M10 23c0 3 6 5 14 5s14-2 14-5"/></svg><i></i><svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="10" rx="14" ry="5"/><path d="M10 10v27c0 3 6 5 14 5s14-2 14-5V10M10 23c0 3 6 5 14 5s14-2 14-5"/></svg></div><div><small>REPLICATED LOCAL STORAGE</small><b>Each node uses its local replicated copy</b><p>Recovery point depends on the latest completed replication.</p></div><span class="mode-status">scheduled sync</span></div>
+</div>
+</section>
+<section class="slide dark affinity-slide" data-duration="10">
+<div class="eyebrow">HA SCHEDULING</div><h2>Affinity rules control workload placement</h2>
+<div class="affinity-layout">
+<div class="affinity-panel node-affinity"><div class="affinity-title"><span>01</span><div><small>NODE AFFINITY</small><b>Limit workloads to selected nodes</b></div></div><div class="node-affinity-map"><div class="affinity-vms"><span>VM VDI 1</span><span>VM VDI 2</span></div><div class="allowed-group"><em>ALLOWED GROUP</em><div class="affinity-node"><i></i><b>pve1</b></div><div class="affinity-node"><i></i><b>pve2</b></div><div class="affinity-node"><i></i><b>pve3</b></div></div><div class="affinity-node excluded"><i></i><b>pve4</b><small>excluded</small></div></div></div>
+<div class="affinity-panel resource-affinity"><div class="affinity-title"><span>02</span><div><small>RESOURCE AFFINITY</small><b>Keep related VMs together or apart</b></div></div><div class="resource-map"><div class="resource-vm db1">DB 1</div><div class="resource-vm db2">DB 2</div><div class="resource-vm srv1">APP 1</div><div class="resource-vm srv2">APP 2</div><div class="separate-link"><span>keep separate</span><i></i></div><div class="together-link left-link"><span>keep together</span></div><div class="together-link right-link"><span>keep together</span></div></div></div>
+</div>
+<div class="affinity-note"><span>Node rules define eligible hosts</span><span>Resource rules express placement relationships</span><b>The HA scheduler evaluates both</b></div>
 </section>
 <section class="slide dark" data-duration="8">
 <div class="eyebrow">LIVE MIGRATION</div><h2>Move workloads across the cluster.</h2>

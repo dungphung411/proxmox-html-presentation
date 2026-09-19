@@ -30,9 +30,22 @@ using Proxmox branding and technically accurate product information.
     services, KVM, LXC, the Linux kernel, and three clustered nodes.
   - One combined workload slide comparing KVM virtual machines with LXC Linux
     containers, including Windows, Linux, application, database, and AppArmor icons.
+  - Slide 4 combines the unified-platform message with the former open-platform
+    content, using Linux, KVM, LXC, ZFS, Ceph, SDN, open API, and hardware-choice
+    icons. Do not recreate the former standalone open-platform slide.
   - An animated Ceph failure scenario on slide 14. It shows one node going
     offline while replica I/O continues on the surviving nodes. Describe this
     state as available but degraded, not fully healthy.
+  - A detailed traditional-infrastructure challenge diagram on slide 6. It
+    separates compute, storage, network, and backup into independent consoles
+    and shows the manual coordination required between silos.
+  - Slide 9 uses the CSC-supplied `assets/proxmox-ve-dashboard.png` screenshot
+    as the cluster-management visual. Preserve the real interface image and use
+    overlays or motion only to highlight areas already present in it.
+  - Slide 10 explains standard HA restart behavior and compares shared storage
+    with replicated local storage while preserving the animated VM movement.
+  - Slide 11 explains HA node affinity and resource affinity, including allowed
+    node groups, keep-together relationships, and keep-separate relationships.
 - Keep the existing narrative and technical intent unless the user asks to
   change content. Prefer improving composition, visual hierarchy, and evidence
   over adding generic marketing copy.
