@@ -19,7 +19,7 @@ using Proxmox branding and technically accurate product information.
 ## Current presentation scope
 
 - The live HTML presentation lives in `proxmox-html-presentation/`.
-- The current deck has 22 slides, including:
+- The current deck has 20 slides, including:
   - A Proxmox-branded cover.
   - Proxmox history and a company introduction for Proxmox Server Solutions GmbH.
   - Product capability slides covering compute, containers, clustering, storage,
@@ -33,7 +33,7 @@ using Proxmox branding and technically accurate product information.
   - Slide 4 combines the unified-platform message with the former open-platform
     content, using Linux, KVM, LXC, ZFS, Ceph, SDN, open API, and hardware-choice
     icons. Do not recreate the former standalone open-platform slide.
-  - An animated Ceph failure scenario on slide 14. It shows one node going
+  - An animated Ceph failure scenario on slide 13. It shows one node going
     offline while replica I/O continues on the surviving nodes. Describe this
     state as available but degraded, not fully healthy.
   - A detailed traditional-infrastructure challenge diagram on slide 6. It
@@ -46,6 +46,8 @@ using Proxmox branding and technically accurate product information.
     with replicated local storage while preserving the animated VM movement.
   - Slide 11 explains HA node affinity and resource affinity, including allowed
     node groups, keep-together relationships, and keep-separate relationships.
+  - The former standalone live-migration and web-management slides were removed.
+    Do not recreate them unless the user explicitly requests them.
 - Keep the existing narrative and technical intent unless the user asks to
   change content. Prefer improving composition, visual hierarchy, and evidence
   over adding generic marketing copy.
