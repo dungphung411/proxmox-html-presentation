@@ -1,4 +1,16 @@
-const slides=[...document.querySelectorAll('.slide')];
+const deck=document.querySelector('#deck');
+const architectureSlide=deck.querySelector('.architecture-slide');
+const challengeSlide=deck.querySelector('.challenge-slide');
+if(architectureSlide&&challengeSlide)deck.insertBefore(challengeSlide,architectureSlide);
+const slides=[...deck.querySelectorAll('.slide')];
+const stage=document.querySelector('#presentationStage');
+const DESIGN_WIDTH=1920,DESIGN_HEIGHT=1080;
+function fitStage(){
+  const scale=Math.min(window.innerWidth/DESIGN_WIDTH,window.innerHeight/DESIGN_HEIGHT);
+  stage.style.setProperty('--deck-scale',scale);
+}
+fitStage();
+window.addEventListener('resize',fitStage,{passive:true});
 const durations=slides.map(s=>Number(s.dataset.duration||7));
 const total=durations.reduce((a,b)=>a+b,0);
 let idx=0,playing=true,timer=null,started=Date.now(),elapsedBefore=0;

@@ -9,12 +9,13 @@
 <link href="styles.css" rel="stylesheet">
 </link></head>
 <body>
+<div class="presentation-stage" id="presentationStage">
 <div aria-live="polite" class="deck" id="deck">
 <div class="hud">
 <div class="brandline">
 <img alt="Proxmox" class="brand-logo" src="https://raw.githubusercontent.com/proxmox/pve-docs/master/images/proxmox-logo.svg"/>
 </div>
-<div class="hud-right"><span id="counter">01 / 20</span><span id="clock">00:00 / 02:30</span></div>
+<div class="hud-partner"><div class="hud-right"><span id="counter">01 / 20</span><span id="clock">00:00 / 02:30</span></div><img class="csc-partner-logo" src="assets/csc-partner-transparent.png" alt="CSC — Presentation partner"/></div>
 </div>
 <section class="slide active dark cover" data-duration="7">
 <div class="cover-art"></div><div class="cover-shade"></div>
@@ -135,7 +136,7 @@
 <section class="slide dark storage-ecosystem" data-duration="10">
 <div class="storage-heading"><div class="eyebrow">STORAGE PLUGINS</div><h2>Broad storage support,<br/>managed in one platform.</h2><p class="lede">Local disks, shared appliances and distributed storage connect through the same Proxmox VE interface.</p><div class="storage-legend"><span><i class="local-dot"></i>Local</span><span><i class="shared-dot"></i>Shared</span><span><i class="distributed-dot"></i>Distributed and backup</span></div></div>
 <div class="storage-orbit">
-<svg class="storage-links" viewBox="0 0 760 600" aria-hidden="true"><defs><marker id="storageArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z"></path></marker></defs><path d="M118 82 L325 252"/><path d="M330 50 L360 236"/><path d="M566 82 L425 252"/><path d="M650 220 L445 282"/><path d="M650 395 L445 320"/><path d="M560 520 L420 345"/><path d="M330 550 L365 360"/><path d="M112 520 L325 345"/><path d="M55 390 L310 320"/><path d="M55 220 L310 280"/></svg>
+<svg class="storage-links" viewBox="0 0 760 600" aria-hidden="true"><defs><marker id="storageArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z"></path></marker></defs><path d="M79 56 L325 252"/><path d="M337 32 L360 236"/><path d="M681 62 L425 252"/><path d="M719 218 L445 282"/><path d="M711 454 L445 320"/><path d="M666 568 L420 345"/><path d="M345 580 L365 360"/><path d="M87 556 L325 345"/><path d="M34 418 L310 320"/><path d="M41 206 L310 280"/></svg>
 <div class="storage-core"><img alt="Proxmox" src="https://raw.githubusercontent.com/proxmox/pve-docs/master/images/proxmox-logo.svg"/><b>Proxmox VE</b><span>Unified storage layer</span></div>
 <div class="storage-type local st1"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 14h13l4 5h13v19H9z"/><path d="M9 19h30"/></svg><b>Directory</b><span>File</span></div>
 <div class="storage-type local st2"><svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="12" rx="14" ry="5"/><path d="M10 12v24c0 3 6 5 14 5s14-2 14-5V12M10 24c0 3 6 5 14 5s14-2 14-5"/></svg><b>ZFS</b><span>File and block</span></div>
@@ -166,9 +167,43 @@
 <div class="credit">Illustrative three-node cluster. Availability depends on quorum, replica size and failure-domain configuration.</div>
 </section>
 
-<section class="slide light" data-duration="8">
-<div class="eyebrow">SOFTWARE-DEFINED NETWORK</div><h2>Build flexible virtual networks.</h2>
-<div class="netmap"><div class="net-node a">NODE 01</div><div class="net-node b">NODE 02</div><div class="net-node c">NODE 03</div><div class="vnet">VNet / VXLAN / VLAN</div><svg viewbox="0 0 1000 420"><path d="M150 90 L500 210 L850 90"></path><path d="M150 90 L850 90"></path><path d="M500 210 L500 340"></path></svg><div class="wan">UPLINK</div></div>
+<section class="slide light linux-network-slide" data-duration="8">
+<div class="eyebrow">PROXMOX VE NETWORKING</div><h2>Simplify Network Infrastructure with Linux Network Stack.</h2>
+<svg class="sales-network" viewBox="0 0 1640 790" role="img" aria-labelledby="sn-title sn-desc">
+<title id="sn-title">One Proxmox node with three dedicated network paths</title>
+<desc id="sn-desc">eno1 connects vmbr0 to host management and Corosync. eno2 and eno3 form LACP bond0, connected to VLAN-aware vmbr1 for Web, App and Database workloads. eno4 and eno5 form bond1 for a separate Ceph network. LACP requires matching switch configuration.</desc>
+<defs>
+<symbol id="sn-nic" viewBox="0 0 48 48"><path d="M8 8h32v30H8zM15 38v5m8-5v5m8-5v5M15 15h18v12H15zM18 19v4m6-4v4m6-4v4"/></symbol>
+<symbol id="sn-switch" viewBox="0 0 48 48"><rect x="4" y="12" width="40" height="26" rx="4"/><path d="M10 21h5m6 0h5m6 0h5M10 29h5m6 0h5m6 0h5"/></symbol>
+<symbol id="sn-host" viewBox="0 0 48 48"><rect x="5" y="6" width="38" height="28" rx="4"/><path d="M16 42h16M24 34v8M12 15h24M12 23h13"/></symbol>
+<symbol id="sn-cluster" viewBox="0 0 48 48"><circle cx="10" cy="24" r="6"/><circle cx="36" cy="10" r="6"/><circle cx="36" cy="38" r="6"/><path d="m15 21 16-8m-16 14 16 8M36 16v16"/></symbol>
+<symbol id="sn-web" viewBox="0 0 48 48"><circle cx="24" cy="24" r="19"/><ellipse cx="24" cy="24" rx="8" ry="19"/><path d="M5 24h38M9 13h30M9 35h30"/></symbol>
+<symbol id="sn-app" viewBox="0 0 48 48"><rect x="4" y="6" width="40" height="36" rx="5"/><path d="M4 16h40M11 11h2m4 0h2m-2 11-6 6 6 6m14-12 6 6-6 6m-6-14-3 16"/></symbol>
+<symbol id="sn-db" viewBox="0 0 48 48"><ellipse cx="24" cy="10" rx="17" ry="6"/><path d="M7 10v28c0 8 34 8 34 0V10M7 24c0 8 34 8 34 0"/></symbol>
+</defs>
+<g class="sn-uplink"><rect x="35" y="0" width="350" height="64" rx="12"/><use href="#sn-switch" x="53" y="15" width="34" height="34"/><text x="228" y="40" text-anchor="middle">MANAGEMENT</text></g>
+<g class="sn-uplink"><rect x="485" y="0" width="640" height="64" rx="12"/><use href="#sn-switch" x="503" y="15" width="34" height="34"/><text x="823" y="40" text-anchor="middle">WORKLOAD TRUNK</text></g>
+<g class="sn-uplink sn-teal"><rect x="1245" y="0" width="350" height="64" rx="12"/><use href="#sn-switch" x="1263" y="15" width="34" height="34"/><text x="1438" y="40" text-anchor="middle">STORAGE</text></g>
+<rect class="sn-node" x="0" y="116" width="1640" height="650" rx="24"/>
+<g class="sn-node-brand">
+<image href="../reference-assets/user-proxmox-logos/proxmox-horizontal-dark.png" x="275" y="134" width="260" height="44" preserveAspectRatio="xMidYMid meet"/>
+<text class="sn-node-label" x="550" y="165">NODE</text>
+</g>
+<g class="sn-uplink-labels"><text x="230" y="97">UPLINK</text><text x="825" y="86">UPLINK · LACP</text><text x="1440" y="86">UPLINK</text></g>
+<path class="sn-divider" d="M420 186V736M1190 186V736"/>
+<g class="sn-wires"><path class="sn-ingress" d="M210 64V210M805 64V94H655V210M805 94H955V210M1420 64V94H1325V210M1420 94H1515V210"/>
+<path d="M210 274V412M655 274V300H805V328M955 274V300H805M805 392V412"/>
+<path d="M1325 274V300H1420V328M1515 274V300H1420M1420 392V552"/>
+<path d="M210 476V506M115 552V506H305V552M805 476V512M575 552V512H1035V552M805 512V552"/></g>
+<g class="sn-port"><rect x="145" y="210" width="130" height="64" rx="12"/><use href="#sn-nic" x="163" y="225" width="34" height="34"/><text x="228" y="250" text-anchor="middle">eno1</text></g><g class="sn-port"><rect x="590" y="210" width="130" height="64" rx="12"/><use href="#sn-nic" x="608" y="225" width="34" height="34"/><text x="673" y="250" text-anchor="middle">eno2</text></g><g class="sn-port"><rect x="890" y="210" width="130" height="64" rx="12"/><use href="#sn-nic" x="908" y="225" width="34" height="34"/><text x="973" y="250" text-anchor="middle">eno3</text></g><g class="sn-port"><rect x="1260" y="210" width="130" height="64" rx="12"/><use href="#sn-nic" x="1278" y="225" width="34" height="34"/><text x="1343" y="250" text-anchor="middle">eno4</text></g><g class="sn-port"><rect x="1450" y="210" width="130" height="64" rx="12"/><use href="#sn-nic" x="1468" y="225" width="34" height="34"/><text x="1533" y="250" text-anchor="middle">eno5</text></g>
+<g class="sn-bond"><rect x="565" y="328" width="480" height="64" rx="12"/><text x="805" y="368" text-anchor="middle">bond0 · LACP</text></g>
+<g class="sn-bond sn-teal"><rect x="1245" y="328" width="350" height="64" rx="12"/><text x="1420" y="368" text-anchor="middle">bond1</text></g>
+<g class="sn-bridge"><rect x="35" y="412" width="350" height="64" rx="12"/><text x="210" y="452" text-anchor="middle">vmbr0</text></g>
+<g class="sn-bridge"><rect x="485" y="412" width="640" height="64" rx="12"/><text x="805" y="452" text-anchor="middle">vmbr1 · VLAN-aware</text></g>
+<g class="sn-services"><use href="#sn-host" x="73" y="575" width="84" height="84"/><use href="#sn-cluster" x="263" y="575" width="84" height="84"/><text x="115" y="696" text-anchor="middle">Host</text><text x="305" y="696" text-anchor="middle">Corosync</text></g>
+<g class="sn-workload"><rect x="475" y="552" width="200" height="180" rx="18"/><use href="#sn-web" x="540" y="577" width="70" height="70"/><text x="575" y="679" text-anchor="middle">Web</text><text class="sn-small" x="575" y="709" text-anchor="middle">VLAN 20</text></g><g class="sn-workload"><rect x="705" y="552" width="200" height="180" rx="18"/><use href="#sn-app" x="770" y="577" width="70" height="70"/><text x="805" y="679" text-anchor="middle">App</text><text class="sn-small" x="805" y="709" text-anchor="middle">VLAN 30</text></g><g class="sn-workload"><rect x="935" y="552" width="200" height="180" rx="18"/><use href="#sn-db" x="1000" y="577" width="70" height="70"/><text x="1035" y="679" text-anchor="middle">Database</text><text class="sn-small" x="1035" y="709" text-anchor="middle">VLAN 40</text></g>
+<g class="sn-ceph"><rect x="1245" y="552" width="350" height="180" rx="18"/><use href="#sn-db" x="1305" y="574" width="65" height="65"/><use href="#sn-db" x="1387" y="574" width="65" height="65"/><use href="#sn-db" x="1469" y="574" width="65" height="65"/><text x="1420" y="687" text-anchor="middle">Ceph</text><text class="sn-small" x="1420" y="716" text-anchor="middle">Dedicated storage network</text></g>
+</svg>
 </section>
 <section class="slide dark" data-duration="8">
 <div class="split"><div><div class="eyebrow">OFFICIAL UI REFERENCE</div><h2>Software-defined networking in the GUI.</h2><p class="lede">This slide loads an official screenshot from the public Proxmox VE documentation repository.</p></div><div class="official-shot"><img alt="Official Proxmox VE WireGuard fabric screenshot" src="https://raw.githubusercontent.com/proxmox/pve-docs/master/images/screenshot/gui-datacenter-create-fabric-wireguard.png"/><div class="shot-fallback">Official Proxmox screenshot<br/><small>Requires internet access</small></div></div></div>
@@ -178,23 +213,53 @@
 <div class="eyebrow">BACKUP &amp; RECOVERY</div><h2>Protect workloads with repeatable workflows.</h2>
 <div class="backup-flow"><div class="bicon">VMs</div><div class="pulse-arrow">→</div><div class="bicon accent">Backup</div><div class="pulse-arrow">→</div><div class="bicon">Restore</div></div>
 </section>
-<section class="slide light" data-duration="8">
+<section class="slide light security-showcase" data-duration="8">
 <div class="eyebrow">SECURITY &amp; CONTROL</div><h2>Granular access to infrastructure.</h2>
-<div class="security"><div class="shield">✓</div><div class="sec-list"><div>Role-based permissions</div><div>Two-factor authentication</div><div>Firewall integration</div><div>Multiple authentication sources</div></div></div>
+<div class="security-scene">
+<div class="security-hero">
+<svg viewBox="0 0 600 650" role="img" aria-label="Layered protection for Proxmox infrastructure">
+<defs><linearGradient id="securityShield" x2="1" y2="1"><stop stop-color="#ff9a24"/><stop offset="1" stop-color="#de6000"/></linearGradient></defs>
+<circle class="security-ring ring-outer" cx="300" cy="310" r="258"/><circle class="security-ring ring-inner" cx="300" cy="310" r="218"/>
+<g class="security-orbit"><circle cx="300" cy="52" r="9"/><circle cx="300" cy="568" r="9"/></g>
+<path class="security-shield-shape" d="M300 114 454 173V307C454 416 378 480 300 519 222 480 146 416 146 307V173Z"/>
+<path class="security-shield-inset" d="M300 145 427 194V307C427 397 366 452 300 488 234 452 173 397 173 307V194Z"/>
+<g class="security-lock"><rect x="246" y="282" width="108" height="87" rx="16"/><path d="M268 282V252a32 32 0 0 1 64 0v30"/><circle cx="300" cy="320" r="8"/><path d="M300 328v15"/></g>
+<path class="security-check" d="m263 409 25 25 51-55"/>
+<g class="security-endpoints"><rect x="38" y="276" width="65" height="65" rx="16"/><path d="M55 294h31v23H55zM63 326h15M71 317v9"/><rect x="497" y="276" width="65" height="65" rx="16"/><path d="M515 291h28v35h-28zM521 300h16M521 309h16M521 318h9"/></g>
+</svg>
+<img src="../reference-assets/user-proxmox-logos/proxmox-horizontal-dark.png" alt="Proxmox" class="security-brand"/>
+</div>
+<div class="security-capabilities">
+<div class="security-feature security-roles"><div class="security-feature-icon"><svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="29" cy="24" r="11"/><path d="M10 62V54c0-20 38-20 38 0v8"/><rect x="47" y="36" width="25" height="26" rx="5"/><path class="security-icon-check" d="m52 49 5 5 10-12"/></svg></div><div><h3>Role-based permissions</h3><p>Users · Roles · Resource access</p></div><span class="security-feature-index">01</span></div>
+<div class="security-feature security-mfa"><div class="security-feature-icon"><svg viewBox="0 0 80 80" aria-hidden="true"><rect x="17" y="7" width="37" height="65" rx="8"/><path d="M29 15h13M32 63h7"/><g class="security-code-dots"><circle cx="27" cy="35" r="2"/><circle cx="36" cy="35" r="2"/><circle cx="45" cy="35" r="2"/></g><circle cx="58" cy="50" r="15"/><path class="security-icon-check" d="m50 50 6 6 11-13"/></svg></div><div><h3>Two-factor authentication</h3><p>A second layer of identity verification</p></div><span class="security-feature-index">02</span></div>
+<div class="security-feature security-firewall"><div class="security-feature-icon"><svg viewBox="0 0 80 80" aria-hidden="true"><path d="M15 18h50v46H15zM15 33h50M15 49h50M32 18v15M49 33v16M32 49v15"/><path class="security-blocked-packet" d="M2 40h8m-5-5 5 5-5 5"/><path class="security-icon-check" d="m53 61 7 7 14-17"/></svg></div><div><h3>Firewall integration</h3><p>Security groups · IP sets · Rules</p></div><span class="security-feature-index">03</span></div>
+<div class="security-feature security-realms"><div class="security-feature-icon"><svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="13"/><circle cx="13" cy="13" r="7"/><circle cx="67" cy="13" r="7"/><circle cx="13" cy="67" r="7"/><circle cx="67" cy="67" r="7"/><path class="security-realm-links" d="m18 18 13 13m18 0 13-13M18 62l13-13m18 0 13 13"/></svg></div><div><h3>Multiple authentication sources</h3><p>PAM · Proxmox VE · LDAP · AD · OpenID Connect</p></div><span class="security-feature-index">04</span></div>
+</div>
+</div>
+<div class="credit security-source">Reference: <a href="https://www.proxmox.com/en/products/proxmox-virtual-environment/features" target="_blank" rel="noopener noreferrer">Proxmox VE — Features &amp; access control</a> · Illustrative animations.</div>
 </section>
 <section class="slide dark" data-duration="8">
 <div class="eyebrow">SCALE WITH YOUR BUSINESS</div><h2>Start small. Grow the cluster.</h2>
 <div class="scale"><div class="snode">01</div><div class="snode">02</div><div class="snode">03</div><div class="snode add">04</div><div class="snode add">05</div><div class="snode add">06</div><div class="snode add">07</div><div class="snode add">08</div></div>
 </section>
-<section class="slide light" data-duration="7">
-<div class="eyebrow">BUSINESS VALUE</div><h2>Less complexity. More control.</h2>
-<div class="value-row"><div><strong>01</strong><b>Integrated</b><span>Compute, storage and networking.</span></div><div><strong>02</strong><b>Flexible</b><span>Open technologies and broad hardware choice.</span></div><div><strong>03</strong><b>Resilient</b><span>Clustering, HA and backup workflows.</span></div></div>
+<section class="slide light business-finale" data-duration="7">
+<div class="eyebrow">BUSINESS VALUE</div><h2>More value. Room to grow.</h2>
+<div class="business-benefits">
+<article class="business-benefit"><svg viewBox="0 0 96 96" aria-hidden="true"><path d="M8 48s15-25 40-25 40 25 40 25-15 25-40 25S8 48 8 48Z"/><circle cx="48" cy="48" r="13"/><circle class="benefit-signal" cx="48" cy="48" r="4"/></svg><h3>Clear visibility</h3><p>One view of your cluster.</p></article>
+<article class="business-benefit"><svg viewBox="0 0 96 96" aria-hidden="true"><rect x="8" y="32" width="23" height="32" rx="5"/><rect x="65" y="32" width="23" height="32" rx="5"/><path class="benefit-link" d="M31 48h34"/><path d="m42 40 8 8-8 8M15 41h9M72 41h9"/></svg><h3>Simpler operations</h3><p>Compute, storage and network.</p></article>
+<article class="business-benefit"><svg viewBox="0 0 96 96" aria-hidden="true"><ellipse cx="35" cy="58" rx="22" ry="8"/><path d="M13 58v14c0 11 44 11 44 0V58M13 65c0 11 44 11 44 0"/><g class="benefit-coin"><circle cx="63" cy="29" r="18"/><path d="M63 19v20M69 23H59a5 5 0 0 0 0 7h8a5 5 0 0 1 0 7H57"/></g></svg><h3>Cost control</h3><p>Make more of your hardware.</p></article>
+<article class="business-benefit"><svg viewBox="0 0 96 96" aria-hidden="true"><path d="m48 9 31 12v27c0 20-14 32-31 41-17-9-31-21-31-41V21Z"/><path class="benefit-check" d="m31 47 12 12 23-27"/></svg><h3>Business resilience</h3><p>HA and backup working together.</p></article>
+<article class="business-benefit"><svg viewBox="0 0 96 96" aria-hidden="true"><rect x="11" y="58" width="16" height="27" rx="3"/><rect x="39" y="43" width="16" height="42" rx="3"/><rect x="67" y="27" width="16" height="58" rx="3"/><path class="benefit-growth" d="m13 39 63-28M58 10h20v20"/></svg><h3>Grow at your pace</h3><p>Add nodes as demand grows.</p></article>
+<article class="business-benefit"><svg viewBox="0 0 96 96" aria-hidden="true"><circle cx="33" cy="28" r="12"/><path d="M11 73V63c0-23 44-23 44 0v10"/><rect x="54" y="46" width="30" height="30" rx="6"/><path class="benefit-check" d="m61 60 6 6 11-14"/></svg><h3>Confident control</h3><p>Roles, identity and permissions.</p></article>
+</div>
+<div class="business-signoff"><img src="../reference-assets/user-proxmox-logos/proxmox-horizontal-dark.png" alt="Proxmox"/><span>Your next chapter starts here.</span></div>
 </section>
 <section class="slide dark" data-duration="8">
 <div class="grid-bg"></div><div class="hero center"><div class="eyebrow">READY FOR MODERN INFRASTRUCTURE</div><h1 class="title reveal">Build your platform<br/>with Proxmox Virtual Environment.</h1><p class="subtitle reveal delay1">Open-source virtualization for enterprise infrastructure.</p><div class="accent-line reveal delay2"></div><p class="credit end-credit">Official screenshots credited to Proxmox Server Solutions GmbH. This presentation is an independent adaptation.</p></div>
 </section>
 <div class="progress"><i id="progressBar"></i></div>
 <div class="controls"><button aria-label="Previous" id="prev">←</button><button aria-label="Play/Pause" id="play">Ⅱ</button><button aria-label="Next" id="next">→</button><button aria-label="Fullscreen" id="fs">⛶</button></div>
+</div>
 </div>
 <script src="app.js"></script>
 </body>

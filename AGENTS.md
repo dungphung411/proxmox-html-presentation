@@ -6,6 +6,17 @@ This project is an animated HTML presentation about Proxmox Virtual Environment.
 The presentation is intended to look polished and business-ready for CSC, while
 using Proxmox branding and technically accurate product information.
 
+This is a sales presentation, not a technical training deck. Design every slide
+for live presentation: lead with customer benefits, use large icons and clear
+visuals, keep copy brief, and use restrained purposeful animation. Technical
+diagrams should support the sales story rather than explain configuration steps.
+Do not add dense explanations, command examples, or implementation detail unless
+the user explicitly requests them. Keep claims accurate and avoid unsupported
+cost savings, SLA promises, or importing capabilities from other Proxmox products.
+
+- Slide 19 is the light-background business-value slide with six concise benefits
+  and animated icons. Slide 20 is the original dark closing slide.
+
 ## Communication
 
 - Communicate with the user in Vietnamese unless asked otherwise.
@@ -66,6 +77,13 @@ using Proxmox branding and technically accurate product information.
   and Management with distinct inline SVG icons and concise descriptions.
 
 ## Images and sources
+
+- CSC is the presentation partner. Keep its logo in the shared HUD so it appears
+  on all slides. Use `proxmox-html-presentation/assets/csc-partner-transparent.png`;
+  the supplied original is `reference-assets/csc-partner-original.png`.
+  Preserve the green/orange colors and aspect ratio.
+
+- Four user-supplied Proxmox logo PNGs are saved in `reference-assets/user-proxmox-logos/`; consult its `README.md` for variants. Use them when the user asks to use these logos. Do not replace existing logos solely because these files are available.
 
 - Prefer assets in `reference-assets/`, which contains user-provided Proxmox
   reference files and extracted media.
