@@ -182,6 +182,252 @@
 @keyframes benefitGrowth{50%{transform:translate(2px,-4px)}}
 @media(prefers-reduced-motion:reduce){.business-finale.active .business-benefit,.business-finale.active .business-benefit svg *{animation:none}}
 
+/* Keep the 1920 × 1080 stage. Scale the complete slide uniformly to reserve
+   86px below its bottom edge; captions never cover diagrams or source credits. */
+.deck{background:#111}
+.deck>.slide{transform:scale(.92);transform-origin:50% 0}
+.subtitle-dock{position:absolute;left:240px;right:240px;top:1000px;bottom:10px;z-index:11;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.subtitle-dock[hidden]{display:none}
+
+
+.monitoring-slide{padding:110px 140px 65px;background:radial-gradient(ellipse at 76% 58%,#12383d65,transparent 50%),linear-gradient(135deg,#17100c,#28150b 58%,#0d0b0a)}
+.monitoring-slide h2{font-size:78px;max-width:none}
+.monitoring-intro{font-size:28px;color:#c5b6aa;margin:24px 0 26px}
+.monitoring-visual{width:1640px;height:520px;display:block}
+.monitoring-alerts{display:grid;grid-template-columns:1.65fr 0.8fr 1fr 1.2fr;align-items:center;gap:26px;border-top:1px solid #916a4855;border-bottom:1px solid #916a4855;padding:23px 0;margin-top:4px}
+.mon-alert-heading,.mon-alert-channel{display:flex;align-items:center;gap:18px}
+.monitoring-alerts svg{width:54px;height:54px;flex-shrink:0;fill:none;stroke:#f7a65d;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.mon-alert-channel svg{stroke:#8acbd7;width:46px;height:46px}
+.monitoring-alerts b{display:block;font-size:26px;font-weight:600;color:#f7ede5}
+.monitoring-alerts small{display:block;font-size:18px;color:#bcaea3;margin-top:8px}
+.mon-alert-note{font-size:16px;color:#bcaea3;margin:15px 0 0}
+.monitoring-slide.active .mon-alert-bell{animation:monBellRing 4s ease-in-out infinite;transform-origin:50% 10%}
+.monitoring-slide.active .mon-ring{animation:monPulse 2s ease-in-out infinite}
+.monitoring-slide.active .mon-alert-channel{animation:monChannelGlow 4s ease-in-out infinite}
+.monitoring-slide.active .mon-alert-channel:nth-child(3){animation-delay:.6s}
+.monitoring-slide.active .mon-alert-channel:nth-child(4){animation-delay:1.2s}
+@keyframes monBellRing{0%,20%,100%{transform:rotate(0)}4%,12%{transform:rotate(-8deg)}8%,16%{transform:rotate(8deg)}}
+@keyframes monChannelGlow{0%,100%{opacity:.7}35%,65%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.monitoring-slide.active .mon-alert-bell,.monitoring-slide.active .mon-ring,.monitoring-slide.active .mon-alert-channel{animation:none}}
+.monitoring-visual text{font-family:Inter,Segoe UI,Arial,sans-serif;font-size:29px;fill:#f7ede5;font-weight:600}
+.monitoring-visual use{fill:none;stroke:#f7943b;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.monitoring-visual .mon-small{font-size:23px;font-weight:400;fill:#cdbfb4}
+.monitoring-visual .mon-example{font-size:15px;font-weight:500;letter-spacing:1px;fill:#a8998d}
+.mon-source>rect,.mon-console>rect{fill:#271e18;stroke:#77553b;stroke-width:2}
+.mon-destination>rect{fill:#251c16;stroke:#a56836;stroke-width:2}
+.mon-zabbix>rect{fill:#142d32;stroke:#518590}
+.mon-zabbix use{stroke:#78c5d5}
+.monitoring-visual .mon-tool{font-size:40px}
+.monitoring-visual .mon-benefit{font-size:25px;fill:#ffc393;font-weight:500}
+.monitoring-visual .mon-zabbix .mon-benefit{fill:#a4d9e3}
+.mon-links path,.mon-traffic path{fill:none;stroke:#c8905e;stroke-width:3;stroke-linejoin:round}
+.mon-links path:last-child{stroke:#67adba}
+.mon-traffic path{stroke:#ffcb94;stroke-width:5;stroke-dasharray:12 450;opacity:0}
+.mon-traffic path:last-child{stroke:#aae4ef}
+.mon-divider,.mon-grid{fill:none;stroke:#77604c;stroke-width:1;opacity:.35}
+.mon-area{fill:#f47a0018}
+.mon-trend{fill:none;stroke:#f7943b;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.mon-status{fill:#7ec9a2}
+.monitoring-slide.active .mon-trend{stroke-dasharray:900;animation:monDraw 3s ease-out both}
+.monitoring-slide.active .mon-traffic path{animation:networkPacketFlow 3.6s linear infinite}
+.monitoring-slide.active .mon-traffic path:last-child{animation-delay:1.4s}
+.monitoring-slide.active .mon-status{animation:monPulse 2.5s ease-in-out infinite}
+.monitoring-slide.active .mon-destination{animation:archReveal .8s .3s ease-out both}
+.monitoring-slide.active .mon-zabbix{animation-delay:.6s}
+.monitoring-credit{font-size:15px;opacity:.7}
+.monitoring-credit a{color:inherit;text-underline-offset:3px}
+@keyframes monDraw{from{stroke-dashoffset:900}to{stroke-dashoffset:0}}
+@keyframes monPulse{50%{opacity:.4}}
+@media(prefers-reduced-motion:reduce){.monitoring-slide.active .mon-trend,.monitoring-slide.active .mon-traffic path,.monitoring-slide.active .mon-status,.monitoring-slide.active .mon-destination{animation:none}}
+
+/* Slide 14: physical uplinks cross the host boundary into aligned NIC ports. */
+.network-redesign h2{font-size:70px;margin-bottom:28px}
+.native-network .nn-host-frame{fill:#fffaf5;stroke:#d8c9bc;stroke-width:2}
+.native-network .nn-wires path,.native-network .nn-packets path{fill:none;stroke:#c57b36;stroke-width:3;stroke-linejoin:round}
+.native-network .nn-wires .nn-cluster,.native-network .nn-packets .nn-cluster{stroke:#648c72}
+.native-network .nn-wires .nn-storage,.native-network .nn-packets .nn-storage{stroke:#00637d}
+.native-network .nn-packets path{stroke-width:5;stroke-dasharray:12 500;opacity:0}
+.native-network .nn-switch rect{fill:#291b13}
+.native-network .nn-switch text{fill:white;font-size:30px;letter-spacing:2px}
+.native-network .nn-switch{color:#ff9c40}
+.native-network .nn-port rect{fill:#eee4d9;stroke:#cdb69f;stroke-width:1.5}
+.native-network .nn-port{color:#9b602f}
+.native-network .nn-port text{font-size:24px}
+.native-network .nn-bond rect{fill:#f8e6d0;stroke:#dcb182;stroke-width:2}
+.native-network .nn-bridge rect{fill:#f47a00}
+.native-network .nn-bridge text{fill:#fff;font-size:26px}
+.native-network .nn-vlan rect,.native-network .nn-storage-box rect{fill:#e0eeee;stroke:#78a7b2;stroke-width:2}
+.native-network .nn-vlan text,.native-network .nn-storage-box text{fill:#00637d}
+.native-network .nn-workload rect{fill:#fff0df;stroke:#dfb78e;stroke-width:2}
+.native-network .nn-workload{color:#d07723}
+.native-network .nn-workload text{font-size:24px}
+.native-network .nn-cluster-box rect{fill:#e8efe7;stroke:#90aa93;stroke-width:2}
+.native-network .nn-cluster-box{color:#57765a}
+.native-network .nn-ceph rect{fill:#e5f0f1;stroke:#86b2bc;stroke-width:2}
+.native-network .nn-ceph{color:#00637d}
+.native-network .nn-ceph text{font-size:22px;fill:#00637d}
+.native-network .nn-host-title{font-size:26px;letter-spacing:1px}
+.native-network .nn-guide{font-size:18px;fill:#8a7969;font-weight:400}
+.native-network .nn-link-label{font-size:21px;fill:#57765a;font-weight:500}
+.native-network .nn-footer{font-size:16px;letter-spacing:1px;fill:#847361;font-weight:600}
+.network-redesign.active .nn-packets path{animation:networkPacketFlow 3.6s linear infinite}
+.network-redesign.active .nn-packets path:nth-child(2n){animation-delay:1.2s}
+.network-redesign.active .nn-packets path:nth-child(3n){animation-delay:2.4s}
+@keyframes networkPacketFlow{0%{stroke-dashoffset:20;opacity:0}15%,80%{opacity:.85}100%{stroke-dashoffset:-500;opacity:0}}
+@media(prefers-reduced-motion:reduce){.network-redesign.active .nn-packets path{animation:none}}
+
+/* Affinity: fixed shared geometry keeps every wire attached to its endpoint. */
+.affinity-slide{padding:110px 140px 65px}
+.affinity-slide h2{font-size:72px;max-width:1640px}
+.affinity-layout{width:1640px;height:600px;margin-top:38px;grid-template-columns:804px 804px;gap:32px}
+.affinity-panel{padding:28px;border-radius:18px}
+.affinity-title{height:74px;gap:18px}
+.affinity-title>span{width:52px;height:52px;font-size:20px;flex-shrink:0}
+.affinity-title small{font-size:18px;letter-spacing:2px}
+.affinity-title b{font-size:26px;line-height:1.25;margin-top:8px}
+.node-affinity-map,.resource-map{height:450px;padding:0;margin-top:12px}
+.affinity-vms{left:0;right:auto;top:35px;width:550px;display:grid;grid-template-columns:1fr 1fr;justify-items:center}
+.affinity-vms span{position:relative;width:160px;height:64px;display:flex;align-items:center;justify-content:center;font-size:23px;padding:0}
+.affinity-vms span:after{left:50%;top:100%;height:146px;width:2px;background:#65b6c9}
+.affinity-vms span:before{content:"";position:absolute;left:calc(50% - 5px);top:calc(100% + 137px);width:10px;height:10px;border-right:2px solid #8dd8e6;border-bottom:2px solid #8dd8e6;transform:rotate(45deg)}
+.allowed-group{left:0;right:auto;top:245px;bottom:auto;width:550px;height:190px;padding:48px 16px 16px;gap:14px}
+.allowed-group>em{top:13px;left:17px;font-size:19px;letter-spacing:1px}
+.affinity-node{height:120px;gap:10px}
+.affinity-node b{font-size:22px}
+.affinity-node i{width:38px;height:50px}
+.excluded{left:574px;right:auto;top:245px;bottom:auto;width:172px;height:190px;border:1px dashed #a18c7d;opacity:.65;gap:12px}
+.excluded small{font-size:18px}
+.resource-vm{width:160px;height:64px;padding:0;display:flex;align-items:center;justify-content:center;font-size:23px}
+.db1{left:24px;top:35px}.db2{right:24px;top:35px}
+.srv1{left:24px;bottom:25px}.srv2{right:24px;bottom:25px}
+.separate-link{left:184px;right:184px;top:67px;height:0;border-top:3px solid #f47a00}
+.separate-link span{top:-33px;font-size:21px;color:#ffd2aa}
+.separate-link i{top:-11px;height:20px;width:3px;background:#ffd2aa}
+.together-link{top:99px;bottom:89px;width:3px;background:#54a8bd}
+.left-link{left:103px}.right-link{right:103px}
+.together-link span{font-size:21px;color:#c0e4ec;left:18px}
+.right-link span{left:auto;right:18px}
+.together-link:after{content:"";position:absolute;left:-3px;top:0;width:9px;height:9px;border-radius:50%;background:#c5f2ff;box-shadow:0 0 12px #54a8bd}
+.affinity-note{height:80px;margin-top:22px;gap:16px}
+.affinity-note span,.affinity-note b{font-size:21px;line-height:1.3;padding:13px 18px;display:flex;align-items:center}
+.affinity-note b{justify-content:center}
+/* Glow changes, not movement, preserve the connector geometry. */
+.affinity-slide.active .resource-vm{animation:affinityVmGlow 3s ease-in-out infinite}
+.affinity-slide.active .separate-link{animation:affinitySeparateGlow 2.8s ease-in-out infinite}
+.affinity-slide.active .together-link{animation:none}
+.affinity-slide.active .together-link:after{animation:affinityTraffic 3s ease-in-out infinite}
+.affinity-slide.active .right-link:after{animation-delay:1.5s}
+.affinity-slide.active .affinity-vms span:after{background:linear-gradient(#65b6c944,#a4e5f5,#65b6c944);background-size:100% 60px;animation:affinityNodeTraffic 2s linear infinite}
+.affinity-slide.active .affinity-vms span:nth-child(2):after{animation-delay:1s}
+@keyframes affinityVmGlow{50%{box-shadow:0 0 0 5px #f47a0018,0 8px 26px #f47a0035}}
+@keyframes affinitySeparateGlow{50%{filter:drop-shadow(0 0 5px #f47a00);opacity:.65}}
+@keyframes affinityTraffic{0%{top:0;opacity:0}15%,85%{opacity:1}100%{top:calc(100% - 9px);opacity:0}}
+@keyframes affinityNodeTraffic{to{background-position:0 60px}}
+@media(prefers-reduced-motion:reduce){.affinity-slide.active .resource-vm,.affinity-slide.active .separate-link,.affinity-slide.active .together-link:after,.affinity-slide.active .affinity-vms span:after,.affinity-slide.active .allowed-group,.affinity-slide.active .affinity-panel{animation:none}}
+
+/* HA uses one fixed coordinate system for nodes, storage cards and connectors. */
+.ha-storage-slide{padding:110px 140px 65px}
+.ha-storage-slide h2{font-size:72px;max-width:1550px}
+.ha-scene{position:relative;width:1640px;height:650px;margin-top:40px}
+.ha-scene .ha-cluster-demo{position:absolute;inset:0 0 auto;height:300px;margin:0}
+.ha-scene .ha-server{top:30px;height:240px;width:18%;padding:25px;border-radius:18px}
+.ha-scene .ha-target{border:2px solid #d8ae85;box-shadow:0 16px 40px #6f482219}
+.ha-scene .ha-server>b{font-size:24px}
+.ha-scene .ha-server>small{font-size:16px}
+.ha-scene .target-slot{bottom:18px;font-size:14px}
+.ha-scene .ha-storage-modes{position:absolute;top:410px;left:0;width:1640px;height:240px;margin:0;gap:40px;grid-template-columns:800px 800px}
+.ha-scene .storage-mode{padding:28px 26px;grid-template-columns:92px 1fr;gap:22px;border-radius:0 0 16px 16px}
+.ha-scene .storage-mode b{font-size:25px;line-height:1.22;margin-top:10px}
+.ha-scene .storage-mode p{font-size:20px;line-height:1.4;margin-top:12px}
+.ha-scene .storage-mode small{font-size:15px;letter-spacing:1.7px}
+.ha-scene .mode-status{position:absolute;right:22px;bottom:16px;font-size:13px;padding:5px 10px}
+.ha-scene .ha-moving-vm{top:125px}
+.ha-scene .ha-route{top:159px}
+.ha-storage-connections{position:absolute;inset:0;width:1640px;height:650px;overflow:visible;pointer-events:none}
+.ha-storage-wire,.ha-storage-flow{fill:none;stroke-width:3;stroke-linejoin:round}
+.shared-wire{stroke:#dd791f}.replicated-wire{stroke:#00637d}
+.ha-storage-wire{opacity:.4}
+.ha-storage-flow{stroke-dasharray:10 550;stroke-linecap:round;opacity:0}
+.ha-storage-connections circle{fill:#f47a00;stroke:#fff8ef;stroke-width:2}
+.ha-storage-connections .replicated-port{fill:#00637d}
+.ha-storage-choice{position:absolute;top:350px;left:580px;width:480px;text-align:center;font-size:15px;font-weight:700;letter-spacing:2px;color:#887667}
+.ha-storage-slide.active .ha-storage-flow{animation:haStorageFlow 3.2s linear infinite}
+.ha-storage-slide.active .replicated-wire.ha-storage-flow{animation-delay:1.6s}
+/* Opacity-only arrival keeps card edges attached to their connector ports. */
+.ha-storage-slide.active .storage-mode{animation:haStorageAppear .7s ease both}
+@keyframes haStorageFlow{0%{stroke-dashoffset:12;opacity:0}10%,90%{opacity:1}100%{stroke-dashoffset:-550;opacity:0}}
+@keyframes haStorageAppear{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.ha-storage-slide.active .ha-storage-flow,.ha-storage-slide.active .storage-mode{animation:none}}
+
+/* Native architecture diagram: supplied layer relationships, deck typography and palette. */
+.architecture-native{padding:110px 140px 60px}
+.architecture-native h2{font-size:76px;max-width:none}
+.pve-architecture{margin-top:38px;display:grid;grid-template-rows:170px 22px 110px 22px 275px 22px 105px}
+.pa-layer{display:flex;align-items:center;gap:32px;padding:22px 30px;border:1px solid #715039;border-radius:16px;background:linear-gradient(100deg,#342318,#251b16)}
+.pa-label{display:flex;align-items:center;gap:22px;min-width:330px}
+.pve-architecture svg{width:54px;height:54px;flex-shrink:0;fill:none;stroke:#f78a29;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pve-architecture h3{font-size:30px;font-weight:600;line-height:1.15;margin:0}
+.pa-label small{display:block;font-size:14px;letter-spacing:2px;color:#d0a17b;margin-bottom:9px}
+.pa-tools-list{flex:1;display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.pa-tools-list span{font-size:20px;text-align:center;padding:7px 8px;background:#f47a0018;border:1px solid #f47a0040;border-radius:6px;color:#ffd4af}
+.pa-services{background:linear-gradient(100deg,#13343a,#18272b);border-color:#39646e}
+.pa-services svg{stroke:#78c2d0}.pa-services .pa-label small{color:#89b6be}
+.pa-service-list{display:flex;flex:1;gap:16px;justify-content:space-between;flex-wrap:wrap}
+.pa-service-list span{font-size:19px;color:#d8e8eb}
+.pa-connector{display:flex;justify-content:space-around;margin:0 300px}
+.pa-connector i{width:2px;height:100%;background:linear-gradient(#f47a0060,#65acbc80);position:relative}
+.pa-connector i:after{content:"";position:absolute;width:5px;height:5px;border-radius:50%;background:#efaa67;left:-1.5px;top:0}
+.pa-workloads{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding:0 100px}
+.pa-guest{padding:20px 26px;border:1px solid #70533e;border-radius:14px;background:#ffffff06}
+.pa-guest-title{display:flex;align-items:center;gap:18px;margin-bottom:16px}
+.pa-guest-title svg{width:42px;height:42px}
+.pa-guest-title h3{font-size:28px}
+.pa-guest-title small{display:block;font-size:12px;letter-spacing:2px;font-weight:500;color:#bcaba0;margin-top:5px}
+.pa-apps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pa-apps span{text-align:center;font-size:20px;padding:10px;border-radius:6px;background:#ede5dd;color:#3c291d}
+.pa-vm-stack{display:grid;gap:6px}
+.pa-os,.pa-qemu{text-align:center;padding:5px;font-size:18px;border-radius:5px;background:#00637d55;color:#d1e6eb}
+.pa-qemu{background:#f47a00;color:white}
+.pa-ct{border-color:#39646e}.pa-ct svg{stroke:#78c2d0}
+.pa-shared{height:112px;display:flex;flex-direction:column;align-items:center;gap:14px;padding-top:24px;color:#a1c5cd;font-size:21px}
+.pa-kernel-path{height:38px;border-left:2px dashed #78c2d0}
+.pa-kernel{background:linear-gradient(100deg,#06465a,#12343e);border-color:#477783}
+.pa-kernel svg{stroke:#a0d3dd}.pa-kernel .pa-label small{color:#9bc5ce}
+.pa-kernel-tags{display:flex;gap:18px;margin-left:auto}
+.pa-kernel-tags span{font-size:23px;padding:12px 32px;border-radius:8px;border:1px solid #77a8b1;color:#edf5f6}
+.architecture-native.active .pa-layer,.architecture-native.active .pa-guest{animation:archReveal .65s ease-out both}
+.architecture-native.active .pa-services{animation-delay:.18s}
+.architecture-native.active .pa-guest{animation-delay:.36s}
+.architecture-native.active .pa-kernel{animation-delay:.54s}
+.architecture-native.active .pa-connector i:after{animation:paFlow 2.6s ease-in-out infinite}
+@keyframes paFlow{0%{transform:translateY(0);opacity:0}30%,70%{opacity:.8}100%{transform:translateY(20px);opacity:0}}
+@media(prefers-reduced-motion:reduce){.architecture-native.active .pa-layer,.architecture-native.active .pa-guest,.architecture-native.active .pa-connector i:after{animation:none}}
+
+/* Slide 6: original supplied architecture image, with external icon cues.
+   Highlight outlines follow the actual image coordinates and never mask labels. */
+.architecture-reference{background:#fff;padding:0}
+.architecture-reference-figure{position:absolute;left:240px;top:115px;width:1600px;margin:0}
+.architecture-reference-figure>img{display:block;width:100%;height:auto}
+.architecture-emphasis{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.architecture-focus{fill:none;stroke:#f47a00;stroke-width:3;opacity:0}
+.architecture-icon-rail{position:absolute;left:75px;top:0;width:190px;height:1080px}
+.architecture-cue{position:absolute;width:190px;display:flex;flex-direction:column;align-items:center;gap:13px;color:#00637d}
+.architecture-cue svg{width:62px;height:62px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.architecture-cue span{font-size:23px;font-weight:500;color:#5b514a;white-space:nowrap}
+.cue-tools{top:335px}.cue-services{top:505px}.cue-workloads{top:665px}.cue-kernel{top:850px}
+.architecture-reference.active .architecture-cue{animation:architectureCueIn .7s ease both}
+.architecture-reference.active .cue-services{animation-delay:.2s}
+.architecture-reference.active .cue-workloads{animation-delay:.4s}
+.architecture-reference.active .cue-kernel{animation-delay:.6s}
+.architecture-reference.active .architecture-focus{animation:architectureLayerFocus 9s ease-in-out infinite}
+.architecture-reference.active .focus-services{animation-delay:2s}
+.architecture-reference.active .focus-workloads{animation-delay:4s}
+.architecture-reference.active .focus-kernel{animation-delay:6s}
+@keyframes architectureCueIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes architectureLayerFocus{0%,24%,100%{opacity:0}5%,18%{opacity:.7}}
+@media(prefers-reduced-motion:reduce){.architecture-reference.active .architecture-cue,.architecture-reference.active .architecture-focus{animation:none}}
+.subtitle-dock p{margin:0;color:#f7f5f2;font-size:30px;font-weight:400;line-height:1.22;text-align:center;text-wrap:balance;text-shadow:0 1px 3px #000;overflow-wrap:anywhere;max-width:100%;max-height:100%;overflow:hidden}
+
 /* Slide 17: four illustrated security capabilities with restrained motion. */
 .security-showcase{background:radial-gradient(ellipse at 24% 58%,#f8dfc0,transparent 42%),linear-gradient(135deg,#fffdf8,#f2ece4)}
 .security-showcase h2{max-width:none;font-size:76px}
