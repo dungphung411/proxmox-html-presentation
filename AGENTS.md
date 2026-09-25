@@ -17,6 +17,11 @@ cost savings, SLA promises, or importing capabilities from other Proxmox product
 - Slide 19 is the light-background business-value slide with six concise benefits
   and animated icons. Slide 20 is the original dark closing slide.
 
+- The scale-with-your-business slide uses an animated Proxmox VE cluster model.
+  Three active nodes connect to a central cluster, while a fourth Proxmox-branded
+  node joins with additional compute, memory, and storage capacity. Keep the
+  visible "Up to 32 nodes" message when refining this slide.
+
 ## Communication
 
 - Communicate with the user in Vietnamese unless asked otherwise.
@@ -32,7 +37,9 @@ cost savings, SLA promises, or importing capabilities from other Proxmox product
 - The live HTML presentation lives in `proxmox-html-presentation/`.
 - The current deck has 20 slides, including:
   - A Proxmox-branded cover.
-  - Proxmox history and a company introduction for Proxmox Server Solutions GmbH.
+  - Slide 2 is the original Proxmox history slide, using the supplied training
+    timeline image. Slide 3 covers community scale using the supplied company
+    image as background and cites the supplied training material for its figures.
   - Product capability slides covering compute, containers, clustering, storage,
     SDN, backup, security, and business value.
   - A storage ecosystem slide showing the supported local, shared, distributed,
