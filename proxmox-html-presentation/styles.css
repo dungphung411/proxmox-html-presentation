@@ -702,3 +702,39 @@
 @media(prefers-reduced-motion:reduce){.community-slide.active .community-copy,.community-slide.active .community-stat,.community-slide.active .community-stat svg,.community-slide.active .industry,.community-slide.active .industry svg{animation:none}}
 
 @media(prefers-reduced-motion:reduce){.cluster-growth-slide.active .growth-link,.cluster-growth-slide.active .cluster-hub,.cluster-growth-slide.active .hub-pulse,.cluster-growth-slide.active .growth-node,.cluster-growth-slide.active .joining-node,.cluster-growth-slide.active .join-link,.cluster-growth-slide.active .join-message,.cluster-growth-slide.active .join-spinner,.cluster-growth-slide.active .join-message>strong,.cluster-growth-slide.active .joining-node .node-load em,.cluster-growth-slide.active .join-badge span{animation:none}.cluster-growth-slide .joining-node,.cluster-growth-slide .join-message,.cluster-growth-slide .join-message>strong{opacity:1}.cluster-growth-slide .join-link{stroke-dashoffset:0}.cluster-growth-slide .joining-node .node-load em{width:68%}}
+
+/* Sustained, low-key motion for narrative slides with fewer live diagrams. */
+.cover.active .cover-art{animation:coverDrift 14s ease-in-out infinite alternate}
+.cover.active .accent-line{animation:accentBreathe 3s 1s ease-in-out infinite}
+.history.active .history-copy{animation:historyCopyIn .7s ease-out both}
+.history.active .timeline-figure{overflow:hidden;animation:timelineFigureIn .8s .16s ease-out both}
+.history.active .timeline-figure img{animation:timelineDrift 9s 1s ease-in-out infinite}
+.architecture-native.active .pa-label svg{animation:layerIconPulse 3.4s ease-in-out infinite}
+.architecture-native.active .pa-services .pa-label svg{animation-delay:.45s}
+.architecture-native.active .pa-kernel .pa-label svg{animation-delay:.9s}
+.architecture-native.active .pa-tools-list span{animation:moduleStatus 5.5s ease-in-out infinite}
+.architecture-native.active .pa-tools-list span:nth-child(3n){animation-delay:.65s}
+.architecture-native.active .pa-tools-list span:nth-child(3n+1){animation-delay:1.3s}
+.architecture-native.active .pa-service-list span{animation:moduleStatus 5.5s 1.8s ease-in-out infinite}
+.architecture-native.active .pa-service-list span:nth-child(2n){animation-delay:2.4s}
+.workload-slide.active .workload-symbol,.workload-slide.active .lxc-mark{animation:workloadBadgeBreathe 3.2s 1s ease-in-out infinite}
+.workload-slide.active .lxc-mark{animation-delay:1.45s}
+.workload-slide.active .guest-icons svg,.workload-slide.active .container-apps span{animation:workloadIconFloat 3.1s 1s ease-in-out infinite}
+.workload-slide.active .guest-icons div:nth-child(2) svg,.workload-slide.active .container-apps span:nth-child(2){animation-delay:1.35s}
+.workload-slide.active .guest-icons div:nth-child(3) svg,.workload-slide.active .container-apps span:nth-child(3){animation-delay:1.7s}
+.workload-slide.active .guest-icons div:nth-child(4) svg{animation-delay:2.05s}
+.workload-slide.active .container-guard svg{animation:guardPulse 2.8s 1.4s ease-in-out infinite}
+.storage-ecosystem.active .storage-type svg{animation:storageIconPulse 4.2s 1s ease-in-out infinite}
+.storage-ecosystem.active .storage-type:nth-of-type(2n) svg{animation-delay:1.7s}
+@keyframes coverDrift{0%{transform:scale(1.01) translate3d(0,0,0)}100%{transform:scale(1.055) translate3d(-1.1%,.7%,0)}}
+@keyframes accentBreathe{50%{transform:scaleX(1.14);transform-origin:left;box-shadow:0 0 18px rgba(244,122,0,.5)}}
+@keyframes historyCopyIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes timelineFigureIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes timelineDrift{0%,100%{transform:scale(1);transform-origin:50% 50%}50%{transform:scale(1.018);transform-origin:55% 50%}}
+@keyframes layerIconPulse{50%{filter:drop-shadow(0 0 8px rgba(244,122,0,.55));transform:translateY(-2px)}}
+@keyframes moduleStatus{0%,100%{background-color:transparent;box-shadow:none}50%{background-color:rgba(244,122,0,.17);box-shadow:0 0 14px rgba(244,122,0,.14)}}
+@keyframes workloadBadgeBreathe{50%{transform:translateY(-3px);box-shadow:0 0 0 7px rgba(244,122,0,.09)}}
+@keyframes workloadIconFloat{50%{transform:translateY(-4px);filter:drop-shadow(0 5px 6px rgba(244,122,0,.24))}}
+@keyframes guardPulse{50%{filter:drop-shadow(0 0 7px rgba(84,168,189,.8));transform:scale(1.08)}}
+@keyframes storageIconPulse{50%{transform:scale(1.1);filter:drop-shadow(0 0 7px rgba(244,122,0,.42))}}
+@media(prefers-reduced-motion:reduce){.cover.active .cover-art,.cover.active .accent-line,.history.active .history-copy,.history.active .timeline-figure,.history.active .timeline-figure img,.architecture-native.active .pa-label svg,.architecture-native.active .pa-tools-list span,.architecture-native.active .pa-service-list span,.workload-slide.active .workload-symbol,.workload-slide.active .lxc-mark,.workload-slide.active .guest-icons svg,.workload-slide.active .container-apps span,.workload-slide.active .container-guard svg,.storage-ecosystem.active .storage-type svg{animation:none}}
