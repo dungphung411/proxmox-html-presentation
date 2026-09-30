@@ -191,12 +191,13 @@
 @keyframes benefitGrowth{50%{transform:translate(2px,-4px)}}
 @media(prefers-reduced-motion:reduce){.business-finale.active .business-benefit,.business-finale.active .business-benefit svg *{animation:none}}
 
-/* Keep the 1920 × 1080 stage. Scale the complete slide uniformly to reserve
-   86px below its bottom edge; captions never cover diagrams or source credits. */
+/* Full-bleed 1920 × 1080 slides. Captions use a compact overlay rail so the
+   presentation remains edge-to-edge when played or exported as video. */
 .deck{background:#111}
-.deck>.slide{transform:scale(.92);transform-origin:50% 0}
-.subtitle-dock{position:absolute;left:240px;right:240px;top:1000px;bottom:10px;z-index:11;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.deck>.slide{transform:none}
+.subtitle-dock{position:absolute;left:160px;right:270px;bottom:0;height:96px;padding:12px 0 10px;z-index:11;display:flex;align-items:center;justify-content:center;pointer-events:none;background:linear-gradient(to top,rgba(4,4,4,.88),rgba(4,4,4,.5) 68%,transparent)}
 .subtitle-dock[hidden]{display:none}
+.slide .credit{bottom:10cqh}
 
 .pbs-vm-flow-slide{padding:110px 140px 65px;background:radial-gradient(ellipse at 52% 45%,#f8dfbd80,transparent 45%),linear-gradient(135deg,#fffdf8,#f2ece4)}
 .pbs-vm-flow-slide h2{font-size:80px;max-width:none}.pv-intro{font-size:28px;color:#7c6959;margin:24px 0 38px}
