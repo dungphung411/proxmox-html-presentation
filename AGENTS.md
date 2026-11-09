@@ -121,3 +121,9 @@ cost savings, SLA promises, or importing capabilities from other Proxmox product
   resources and the local `reference-assets/` folder.
 - Before handoff, check that slide count, local image paths, and any newly added
   labels or icons are present. Do not overwrite unrelated user changes.
+
+## VMware comparison addition
+
+- The live deck now has 19 active slides (the challenge section remains commented out).
+- Slide 17 compares Proxmox VE 9.2 with VMware vSphere / VVF / VCF before the business-value and closing slides. Preserve its eight decision areas, source links, version/entitlement qualifications, reduced-motion support, and animated inline SVG.
+- Proxmox VE 9.2 dynamic CRS balancing applies to HA-managed guests. Do not describe it as absent or equate its scope with VMware DRS without qualification.

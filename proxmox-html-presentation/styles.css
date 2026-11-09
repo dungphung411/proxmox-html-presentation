@@ -738,3 +738,41 @@
 @keyframes guardPulse{50%{filter:drop-shadow(0 0 7px rgba(84,168,189,.8));transform:scale(1.08)}}
 @keyframes storageIconPulse{50%{transform:scale(1.1);filter:drop-shadow(0 0 7px rgba(244,122,0,.42))}}
 @media(prefers-reduced-motion:reduce){.cover.active .cover-art,.cover.active .accent-line,.history.active .history-copy,.history.active .timeline-figure,.history.active .timeline-figure img,.architecture-native.active .pa-label svg,.architecture-native.active .pa-tools-list span,.architecture-native.active .pa-service-list span,.workload-slide.active .workload-symbol,.workload-slide.active .lxc-mark,.workload-slide.active .guest-icons svg,.workload-slide.active .container-apps span,.workload-slide.active .container-guard svg,.storage-ecosystem.active .storage-type svg{animation:none}}
+
+
+/* Comparison: a single detailed matrix, with animated infrastructure artwork. */
+.vmware-comparison{padding:108px 130px 80px;background:linear-gradient(120deg,#fffdf8,#f1e9df)}
+.vmware-comparison h2{font-size:64px;max-width:1250px}
+.vmware-comparison .eyebrow{margin-bottom:14px}
+.cmp-intro{font-size:24px;margin:16px 0 25px;color:#726459}
+.cmp-motion{position:absolute;right:135px;top:112px;width:320px;height:100px;overflow:visible}
+.cmp-hosts{fill:#fffaf4;stroke:#9c8b7b;stroke-width:2}.cmp-hosts path{fill:none;stroke-width:3}
+.cmp-route{fill:none;stroke:#ae9e90;stroke-width:2;stroke-dasharray:5 6}
+.cmp-packet{fill:#fff6ec;stroke:#e87500;stroke-width:2}.cmp-packet text{fill:#9b4b08;stroke:none;font:700 18px Arial,sans-serif}
+.cmp-guest{fill:#f47a00;stroke:#d76500;stroke-width:2}.cmp-guest-vmw{fill:#54a8bd;stroke:#287b90}
+.cmp-led{fill:#4d9d68}
+.cmp-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:21px;line-height:1.22;box-shadow:0 12px 35px #4a2a1010}
+.cmp-topic{width:20%}.cmp-table col:not(.cmp-topic){width:40%}
+.cmp-table thead th{padding:16px 22px;text-align:left;background:#31221b;color:#fff;font-weight:600}
+.cmp-table thead th:nth-child(2){background:#bd5700}.cmp-table thead th:nth-child(3){background:#22677a}
+.cmp-table thead b{display:block;font-size:29px}.cmp-table thead small{display:block;font-size:16px;font-weight:400;margin-top:5px;color:#fff1e4}
+.cmp-table tbody th,.cmp-table td{padding:10px 22px;border-bottom:1px solid #dcd0c3;vertical-align:middle;text-align:left}
+.cmp-table tbody th{font-size:21px;color:#4a3526;background:#eee4d7;font-weight:750}
+.cmp-table td{background:#fffaf3}.cmp-table td:last-child{background:#f4f8f8}
+.cmp-table td strong{display:block;font-weight:650;color:#33281f;font-size:21px}
+.cmp-table td span{display:block;font-size:16px;color:#655d55;margin-top:5px;line-height:1.25}
+.cmp-footer{margin-top:17px;color:#746b62;font-size:15px;line-height:1.35}
+.cmp-footer p{margin:0 0 8px;font-size:16px;color:#554638}
+.cmp-footer a{color:#915013;text-underline-offset:3px}.cmp-footer a:focus-visible{outline:3px solid #22677a;outline-offset:4px}
+.cmp-footer nav>span{float:right}.cmp-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.vmware-comparison.active .cmp-table tbody tr{animation:cmpRowIn .5s calc(var(--row)*.09s) both}
+.vmware-comparison.active .cmp-guest{animation:cmpFloat 3.5s ease-in-out infinite}.vmware-comparison.active .cmp-guest-vmw{animation-delay:-1.7s}
+.vmware-comparison.active .cmp-route{animation:cmpDash 2s linear infinite}
+.vmware-comparison.active .cmp-packet{animation:cmpPacket 4s ease-in-out infinite}
+.vmware-comparison.active .cmp-led{animation:cmpLed 2s ease-in-out infinite}
+@keyframes cmpRowIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes cmpFloat{50%{transform:translateY(-5px)}}
+@keyframes cmpDash{to{stroke-dashoffset:-44}}
+@keyframes cmpPacket{50%{opacity:.65}}
+@keyframes cmpLed{50%{opacity:.35}}
+@media(prefers-reduced-motion:reduce){.vmware-comparison.active .cmp-table tbody tr,.vmware-comparison.active .cmp-guest,.vmware-comparison.active .cmp-route,.vmware-comparison.active .cmp-packet,.vmware-comparison.active .cmp-led{animation:none}}

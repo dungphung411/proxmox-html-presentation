@@ -15,7 +15,7 @@
 <div class="brandline">
 <img alt="Proxmox" class="brand-logo" data-on-dark-src="../reference-assets/user-proxmox-logos/proxmox-horizontal-light.png" data-on-light-src="../reference-assets/user-proxmox-logos/proxmox-horizontal-dark.png" src="../reference-assets/user-proxmox-logos/proxmox-horizontal-light.png"/>
 </div>
-<div class="hud-partner"><div class="hud-right"><span id="counter">01 / 20</span><span id="clock">00:00 / 02:30</span></div><img class="csc-partner-logo" src="assets/csc-partner-transparent.png" alt="CSC — Presentation partner"/></div>
+<div class="hud-partner"><div class="hud-right"><span id="counter">01 / 19</span><span id="clock">00:00 / 02:30</span></div><img class="csc-partner-logo" src="assets/csc-partner-transparent.png" alt="CSC — Presentation partner"/></div>
 </div>
 <section class="slide active dark cover" data-duration="7" data-subtitle="Nền tảng ảo hóa nguồn mở, hợp nhất máy ảo, container và hạ tầng doanh nghiệp.">
 <div class="cover-art"></div><div class="cover-shade"></div>
@@ -316,6 +316,33 @@
 <article class="growth-node joining-node"><div class="join-badge"><span>+</span><b>NEW NODE</b></div><div class="growth-node-head"><img src="../reference-assets/user-proxmox-logos/proxmox-horizontal-light.png" alt="Proxmox"/><span class="join-status"><em class="joining-copy">JOINING</em><em class="joined-copy">ONLINE</em></span></div><b>NODE 04</b><div class="node-resources"><span><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="8" width="34" height="27" rx="4"/><path d="M17 41h14M24 35v6"/></svg>CPU</span><span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 8h24v32H12zM18 15h12M18 23h12M18 31h7"/></svg>RAM</span><span><svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="11" rx="14" ry="5"/><path d="M10 11v25c0 3 6 5 14 5s14-2 14-5V11M10 23c0 3 6 5 14 5s14-2 14-5"/></svg>DISK</span></div><i class="node-load"><em></em></i></article>
 <div class="join-message"><span class="join-spinner"></span><div><small>CLUSTER EXPANSION</small><b class="joining-copy">Node 04 joins the cluster</b><b class="joined-copy">4 nodes. One Proxmox VE cluster.</b></div><strong>✓</strong></div>
 </div>
+</section>
+<section class="slide light vmware-comparison" data-duration="35" data-subtitle="So sánh Proxmox VE 9.2 và VMware: tính năng, mô hình bản quyền và điều kiện vận hành; lựa chọn theo workload và tổng chi phí thực tế.">
+<div class="eyebrow">PLATFORM COMPARISON</div>
+<h2>Proxmox VE vs. VMware</h2>
+<p class="cmp-intro">Compare the capabilities. Choose the operating model.</p>
+<svg class="cmp-motion" viewBox="0 0 410 115" role="img" aria-labelledby="cmp-motion-title">
+<title id="cmp-motion-title">Animated virtual workloads on two infrastructure platforms</title>
+<g class="cmp-hosts"><rect x="10" y="44" width="150" height="62" rx="9"/><rect x="250" y="44" width="150" height="62" rx="9"/><path d="M28 68h113M28 84h80M269 68h113M269 84h80"/></g>
+<path class="cmp-route" d="M160 76H250"/>
+<g class="cmp-packet"><circle cx="205" cy="76" r="23"/><text x="205" y="82" text-anchor="middle">VS</text></g>
+<g class="cmp-guest cmp-guest-pve"><rect x="30" y="5" width="42" height="30" rx="5"/><rect x="84" y="5" width="42" height="30" rx="5"/></g>
+<g class="cmp-guest cmp-guest-vmw"><rect x="277" y="5" width="42" height="30" rx="5"/><rect x="331" y="5" width="42" height="30" rx="5"/></g>
+<circle class="cmp-led" cx="142" cy="94" r="4"/><circle class="cmp-led" cx="382" cy="94" r="4"/>
+</svg>
+<table class="cmp-table"><caption class="cmp-sr">Capability and operating model comparison; VMware features depend on version and entitlement.</caption>
+<colgroup><col class="cmp-topic"/><col/><col/></colgroup>
+<thead><tr><th scope="col">Decision area</th><th scope="col"><b>Proxmox VE</b><small>9.2 · KVM + LXC</small></th><th scope="col"><b>VMware vSphere</b><small>VVF / VCF · entitlement-dependent</small></th></tr></thead>
+<tbody><tr style="--row:0"><th scope="row">Licensing & support</th><td><strong>Open-source; all VE features available.</strong><span>Optional subscription per occupied CPU socket; support varies by plan.</span></td><td><strong>Commercial subscription; core-based licensing.</strong><span>Feature rights, bundles and vSAN capacity depend on entitlement.</span></td></tr>
+<tr style="--row:1"><th scope="row">Management & workloads</th><td><strong>Cluster web UI on every node; REST API.</strong><span>KVM for Windows/Linux VMs + native LXC Linux containers.</span></td><td><strong>ESX/ESXi hosts managed centrally by vCenter.</strong><span>VM workloads; Kubernetes services depend on product/version.</span></td></tr>
+<tr style="--row:2"><th scope="row">Availability & migration</th><td><strong>HA restart + live VM migration.</strong><span>Quorum, fencing, spare capacity and accessible disks are required.</span></td><td><strong>vSphere HA restart + vMotion.</strong><span>Compatible hosts, networks, storage and licensing are required.</span></td></tr>
+<tr style="--row:3"><th scope="row">Resource balancing</th><td><strong>VE 9.2: dynamic CRS load balancing.</strong><span>Automatically migrates HA-managed guests while respecting HA rules.</span></td><td><strong>DRS automates VM placement and balancing.</strong><span>CPU/memory demand and affinity rules guide decisions; entitlement applies.</span></td></tr>
+<tr style="--row:4"><th scope="row">Storage & HCI</th><td><strong>Integrated Ceph + local ZFS; NFS / iSCSI / LVM.</strong><span>Shared SAN or distributed HCI; architecture determines resiliency.</span></td><td><strong>VMFS / NFS / vVols; vSAN for HCI.</strong><span>Storage policies and capabilities vary by backend and entitlement.</span></td></tr>
+<tr style="--row:5"><th scope="row">Virtual networking</th><td><strong>Linux bridge, bonds, VLANs + integrated SDN.</strong><span>VXLAN / EVPN capabilities; design and validate the physical underlay.</span></td><td><strong>Standard / distributed switches; NSX in VCF.</strong><span>Advanced networking and security depend on the selected stack.</span></td></tr>
+<tr style="--row:6"><th scope="row">Backup & recovery</th><td><strong>Built-in scheduled VM/container backup.</strong><span>Separate Proxmox Backup Server adds deduplication and incremental backups.</span></td><td><strong>Backup products integrate through VMware APIs.</strong><span>Application recovery and retention depend on the backup solution.</span></td></tr>
+<tr style="--row:7"><th scope="row">Best-fit decision</th><td><strong>Open stack and flexible infrastructure choice.</strong><span>Include support, hardware, migration and operating skills in TCO.</span></td><td><strong>Broad enterprise ecosystem and integrated services.</strong><span>Validate application certification, licensing and team expertise.</span></td></tr></tbody></table>
+<div class="cmp-footer"><p>HA restarts workloads after failure; it does not guarantee uninterrupted applications. No universal performance or savings claim.</p>
+<nav aria-label="Comparison sources">Sources: <a href="https://proxmox.com/en/products/proxmox-virtual-environment/features" target="_blank" rel="noopener noreferrer">VE features</a> · <a href="https://proxmox.com/en/products/proxmox-virtual-environment/pricing" target="_blank" rel="noopener noreferrer">Subscription</a> · <a href="https://proxmox.com/en/about/company-details/press-releases/proxmox-virtual-environment-9-2" target="_blank" rel="noopener noreferrer">VE 9.2 CRS</a> · <a href="https://www.vmware.com/docs/vmw-datasheet-vsphere-product-line-comparison" target="_blank" rel="noopener noreferrer">VMware portfolio</a><span>Reviewed 09 Nov 2026 · Validate the exact release and commercial offer.</span></nav></div>
 </section>
 <section class="slide light business-finale" data-duration="7" data-subtitle="Quản trị rõ ràng hơn, vận hành tinh gọn hơn và sẵn sàng mở rộng.">
 <div class="eyebrow">BUSINESS VALUE</div><h2>More value. Room to grow.</h2>
