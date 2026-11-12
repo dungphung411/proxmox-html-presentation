@@ -191,12 +191,9 @@
 @keyframes benefitGrowth{50%{transform:translate(2px,-4px)}}
 @media(prefers-reduced-motion:reduce){.business-finale.active .business-benefit,.business-finale.active .business-benefit svg *{animation:none}}
 
-/* Full-bleed 1920 × 1080 slides. Captions use a compact overlay rail so the
-   presentation remains edge-to-edge when played or exported as video. */
+/* Full-bleed 1920 × 1080 slides for presentation and video export. */
 .deck{background:#111}
 .deck>.slide{transform:none}
-.subtitle-dock{position:absolute;left:160px;right:270px;bottom:0;height:96px;padding:12px 0 10px;z-index:11;display:flex;align-items:center;justify-content:center;pointer-events:none;background:linear-gradient(to top,rgba(4,4,4,.88),rgba(4,4,4,.5) 68%,transparent)}
-.subtitle-dock[hidden]{display:none}
 .slide .credit{bottom:10cqh}
 
 .pbs-vm-flow-slide{padding:110px 140px 65px;background:radial-gradient(ellipse at 52% 45%,#f8dfbd80,transparent 45%),linear-gradient(135deg,#fffdf8,#f2ece4)}
@@ -522,7 +519,6 @@
 @keyframes architectureCueIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 @keyframes architectureLayerFocus{0%,24%,100%{opacity:0}5%,18%{opacity:.7}}
 @media(prefers-reduced-motion:reduce){.architecture-reference.active .architecture-cue,.architecture-reference.active .architecture-focus{animation:none}}
-.subtitle-dock p{margin:0;color:#f7f5f2;font-size:30px;font-weight:400;line-height:1.22;text-align:center;text-wrap:balance;text-shadow:0 1px 3px #000;overflow-wrap:anywhere;max-width:100%;max-height:100%;overflow:hidden}
 
 /* Slide 17: four illustrated security capabilities with restrained motion. */
 .security-showcase{background:radial-gradient(ellipse at 24% 58%,#f8dfc0,transparent 42%),linear-gradient(135deg,#fffdf8,#f2ece4)}
@@ -750,22 +746,27 @@
 .cmp-route{fill:none;stroke:#ae9e90;stroke-width:2;stroke-dasharray:5 6}
 .cmp-packet{fill:#fff6ec;stroke:#e87500;stroke-width:2}.cmp-packet text{fill:#9b4b08;stroke:none;font:700 18px Arial,sans-serif}
 .cmp-guest{fill:#f47a00;stroke:#d76500;stroke-width:2}.cmp-guest-vmw{fill:#54a8bd;stroke:#287b90}
+.cmp-guest text{fill:white;stroke:none;text-anchor:middle;font:700 12px 'Segoe UI',Arial,sans-serif}
+.cmp-activity{fill:none;stroke:#e87500;stroke-width:3;stroke-linecap:round;stroke-dasharray:8 6}
 .cmp-led{fill:#4d9d68}
 .cmp-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:21px;line-height:1.22;box-shadow:0 12px 35px #4a2a1010}
 .cmp-topic{width:20%}.cmp-table col:not(.cmp-topic){width:40%}
 .cmp-table thead th{padding:16px 22px;text-align:left;background:#31221b;color:#fff;font-weight:600}
 .cmp-table thead th:nth-child(2){background:#bd5700}.cmp-table thead th:nth-child(3){background:#22677a}
 .cmp-table thead b{display:block;font-size:29px}.cmp-table thead small{display:block;font-size:16px;font-weight:400;margin-top:5px;color:#fff1e4}
-.cmp-table tbody th,.cmp-table td{padding:10px 22px;border-bottom:1px solid #dcd0c3;vertical-align:middle;text-align:left}
+.cmp-table tbody th,.cmp-table td{padding:11px 20px;border-bottom:1px solid #dcd0c3;vertical-align:middle;text-align:left}
 .cmp-table tbody th{font-size:21px;color:#4a3526;background:#eee4d7;font-weight:750}
+.cmp-topic-label{display:flex;gap:14px;align-items:center;line-height:1.25}
+.cmp-topic-icon{width:34px;height:34px;flex:0 0 34px;fill:none;stroke:#bd5700;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .cmp-table td{background:#fffaf3}.cmp-table td:last-child{background:#f4f8f8}
 .cmp-table td strong{display:block;font-weight:650;color:#33281f;font-size:21px}
 .cmp-table td span{display:block;font-size:16px;color:#655d55;margin-top:5px;line-height:1.25}
-.cmp-footer{margin-top:17px;color:#746b62;font-size:15px;line-height:1.35}
-.cmp-footer p{margin:0 0 8px;font-size:16px;color:#554638}
-.cmp-footer a{color:#915013;text-underline-offset:3px}.cmp-footer a:focus-visible{outline:3px solid #22677a;outline-offset:4px}
-.cmp-footer nav>span{float:right}.cmp-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.cmp-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
 .vmware-comparison.active .cmp-table tbody tr{animation:cmpRowIn .5s calc(var(--row)*.09s) both}
+.vmware-comparison.active .cmp-table tbody th{animation:cmpTopicFocus 24s calc(1.5s + var(--row)*3s) infinite}
+.vmware-comparison.active .cmp-table td{animation:cmpCellFocus 24s calc(1.5s + var(--row)*3s) infinite}
+.vmware-comparison.active .cmp-topic-icon{animation:cmpIconFocus 24s calc(1.5s + var(--row)*3s) infinite;transform-origin:center}
+.vmware-comparison.active .cmp-activity{animation:cmpDash 2.5s linear infinite}
 .vmware-comparison.active .cmp-guest{animation:cmpFloat 3.5s ease-in-out infinite}.vmware-comparison.active .cmp-guest-vmw{animation-delay:-1.7s}
 .vmware-comparison.active .cmp-route{animation:cmpDash 2s linear infinite}
 .vmware-comparison.active .cmp-packet{animation:cmpPacket 4s ease-in-out infinite}
@@ -775,4 +776,57 @@
 @keyframes cmpDash{to{stroke-dashoffset:-44}}
 @keyframes cmpPacket{50%{opacity:.65}}
 @keyframes cmpLed{50%{opacity:.35}}
-@media(prefers-reduced-motion:reduce){.vmware-comparison.active .cmp-table tbody tr,.vmware-comparison.active .cmp-guest,.vmware-comparison.active .cmp-route,.vmware-comparison.active .cmp-packet,.vmware-comparison.active .cmp-led{animation:none}}
+@keyframes cmpTopicFocus{0%,12.5%,100%{background-color:#eee4d7;box-shadow:inset 0 0 #e87500}2%,10%{background-color:#ffe0b7;box-shadow:inset 4px 0 #e87500}}
+@keyframes cmpCellFocus{0%,12.5%,100%{box-shadow:inset 0 0 0 transparent}2%,10%{box-shadow:inset 0 3px 0 #e8750040}}
+@keyframes cmpIconFocus{0%,12.5%,100%{transform:scale(1)}3%,8%{transform:scale(1.12)}}
+
+/* NVIDIA vGPU: real hardware photography above an animated sharing diagram. */
+.nvidia-vgpu-slide{padding:128px 130px 110px;background:radial-gradient(ellipse at 78% 48%,#e8efe0 0,transparent 55%),#faf7f0}
+.nvidia-vgpu-slide h2{font-size:70px;line-height:1.04;max-width:1350px;position:relative;z-index:2}
+.nvidia-vgpu-slide .eyebrow{margin-bottom:20px}
+.vgpu-nvidia-logo{position:absolute;right:130px;top:111px;width:220px;height:132px;object-fit:contain;mix-blend-mode:multiply}
+.vgpu-copy{position:absolute;left:130px;top:365px;width:535px}
+.vgpu-lead{margin:0 0 28px;font-size:28px;line-height:1.4;color:#584b40}
+.vgpu-support{display:flex;gap:15px;padding:19px 0;border-top:1px solid #d9cebf;border-bottom:1px solid #d9cebf}
+.vgpu-support svg{flex:0 0 43px;width:43px;height:43px;fill:none;stroke:#629400;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.vgpu-support b{display:block;font-size:23px;color:#426800;margin-bottom:8px}
+.vgpu-support span{display:block;font-size:20px;line-height:1.45;color:#514b43}
+.vgpu-theory{font-size:20px;line-height:1.5;color:#62574b;margin-top:24px}
+.vgpu-theory p{margin:0 0 22px}.vgpu-theory b{color:#32271f;font-size:22px}
+.vgpu-theory .vgpu-requirements{font-size:17px;max-width:440px;color:#796e61;margin-top:28px}
+.vgpu-hardware{position:absolute;left:740px;right:130px;top:340px;height:280px;margin:0;border-radius:20px;isolation:isolate;box-shadow:0 20px 50px #2f331721}
+.vgpu-hardware>img{width:100%;height:100%;object-fit:cover;object-position:77% center;border-radius:20px}
+.vgpu-hardware figcaption{position:absolute;left:25px;bottom:23px;font-size:22px;font-weight:700;color:#fff;text-shadow:0 1px 6px #1a2030}
+.vgpu-hardware figcaption span{display:block;font-size:16px;margin:5px 0 0 18px;font-weight:400}
+.vgpu-hardware figcaption i,.vgpu-status,.vgpu-vm-tag i{display:inline-block;width:8px;height:8px;margin-right:10px;border-radius:50%;background:#90cd35;box-shadow:0 0 10px #76b90080}
+.vgpu-fabric{position:absolute;left:740px;right:130px;top:644px;height:66px;display:flex;align-items:center;justify-content:center;gap:30px;background:#fffdf8;border-top:3px solid #e87500;border-bottom:1px solid #d5d3c3;color:#3f382f;box-shadow:0 6px 24px #2f33170b}
+.vgpu-fabric>img{width:170px;height:auto}.vgpu-fabric>span{font-size:22px}.vgpu-fabric b{color:#bd5700;margin:0 12px}.vgpu-status{margin:0}
+.vgpu-streams{position:absolute;left:740px;top:710px;width:1050px;height:58px;overflow:visible;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.vgpu-wire{stroke:#a6b595;stroke-width:1.5}.vgpu-flow{stroke:#76b900;stroke-width:4;stroke-dasharray:16 430;stroke-dashoffset:446;filter:drop-shadow(0 0 5px #76b90080)}
+.vgpu-vms{position:absolute;left:740px;right:130px;top:768px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.vgpu-vm{position:relative;min-width:0}.vgpu-vm-visual{height:127px;border:1px solid #9aaa83;overflow:hidden;border-radius:9px;background:#19221a;box-shadow:0 5px 20px #2b341417}
+.vgpu-vm-visual img{width:100%;height:100%;object-fit:cover;object-position:50% 32%}
+.vgpu-ai-visual img{object-position:65% 67%}
+.vgpu-vdi .vgpu-vm-visual{background:linear-gradient(135deg,#122b2f,#304a42);display:flex;align-items:center;justify-content:center}
+.vgpu-vm-visual svg{width:190px;height:110px;fill:#243e3b;stroke:#b6e1d1;stroke-width:2}.vgpu-vm-visual .vgpu-window{fill:#76b90033;stroke:#91c957}
+.vgpu-vm-tag{position:absolute;top:9px;left:10px;color:#fff;background:#111b12d9;padding:4px 8px;font-size:12px;letter-spacing:.05em;border-radius:3px}
+.vgpu-vm-tag i{width:6px;height:6px;margin-right:6px}
+.vgpu-vm h3{font-size:22px;color:#32271f;margin:12px 0 4px;line-height:1.2}
+.vgpu-vm>small{font-size:16px;line-height:1.3;color:#665c50}
+.vgpu-source-line{position:absolute;left:130px;right:130px;top:960px;font-size:14px;color:#827363;display:flex;gap:6px;align-items:center}
+.vgpu-source-line a{color:#6b7251;text-decoration-color:#b5bca3;text-underline-offset:3px}.vgpu-source-line>span{margin-left:auto}
+.nvidia-vgpu-slide.active .vgpu-hardware{animation:vgpuHardwareFloat 6s ease-in-out infinite}
+.nvidia-vgpu-slide.active .vgpu-hardware figcaption i,.nvidia-vgpu-slide.active .vgpu-status,.nvidia-vgpu-slide.active .vgpu-vm-tag i{animation:vgpuStatus 2.8s ease-in-out infinite}
+.nvidia-vgpu-slide.active .vgpu-flow{animation:vgpuData 3.6s var(--flow-delay) linear infinite}
+.nvidia-vgpu-slide.active .vgpu-vm{animation:vgpuVmIn .7s calc(.6s + var(--vm)*.22s) both}
+.nvidia-vgpu-slide.active .vgpu-vm-visual{animation:vgpuVmGlow 4.8s calc(var(--vm)*1.6s) ease-in-out infinite}
+.nvidia-vgpu-slide.active .vgpu-vm-visual img{animation:vgpuImageDrift 12s ease-in-out infinite}
+.nvidia-vgpu-slide.active .vgpu-window{animation:vgpuStatus 3s ease-in-out infinite}
+@keyframes vgpuHardwareFloat{50%{transform:translateY(-5px);box-shadow:0 24px 55px #76b90030}}
+@keyframes vgpuStatus{50%{opacity:.45}}
+@keyframes vgpuData{to{stroke-dashoffset:0}}
+@keyframes vgpuVmIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes vgpuVmGlow{0%,65%,100%{border-color:#9aaa83;box-shadow:0 5px 20px #2b341417}25%{border-color:#76b900;box-shadow:0 0 0 3px #76b90020,0 6px 24px #76b90030}}
+@keyframes vgpuImageDrift{50%{transform:scale(1.06)}}
+@media(prefers-reduced-motion:reduce){.nvidia-vgpu-slide.active .vgpu-hardware,.nvidia-vgpu-slide.active .vgpu-hardware figcaption i,.nvidia-vgpu-slide.active .vgpu-status,.nvidia-vgpu-slide.active .vgpu-vm-tag i,.nvidia-vgpu-slide.active .vgpu-flow,.nvidia-vgpu-slide.active .vgpu-vm,.nvidia-vgpu-slide.active .vgpu-vm-visual,.nvidia-vgpu-slide.active .vgpu-vm-visual img,.nvidia-vgpu-slide.active .vgpu-window{animation:none}.nvidia-vgpu-slide.active .vgpu-flow{stroke-dasharray:none;opacity:.7}}
+@media(prefers-reduced-motion:reduce){.vmware-comparison.active .cmp-table tbody tr,.vmware-comparison.active .cmp-table tbody th,.vmware-comparison.active .cmp-table td,.vmware-comparison.active .cmp-topic-icon,.vmware-comparison.active .cmp-activity,.vmware-comparison.active .cmp-guest,.vmware-comparison.active .cmp-route,.vmware-comparison.active .cmp-packet,.vmware-comparison.active .cmp-led{animation:none}}
